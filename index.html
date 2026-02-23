@@ -25,7 +25,7 @@
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 5rem; background: linear-gradient(160deg, #ffffff 0%, #EEF2FF 60%, #e8f5f0 100%); position: relative; overflow: hidden; }
   .hero-content { max-width: 800px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
   
-  /* ADDED HERO LOGO */
+  /* LOGO IN HERO */
   .hero-main-logo { width: 120px; height: auto; margin-bottom: 1.5rem; }
   
   .hero-badge { display: inline-block; background: var(--blue-light); color: var(--blue); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem; text-transform: uppercase; }
@@ -79,6 +79,23 @@
   .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.75px; line-height: 1.2; margin-bottom: 1rem; }
   .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-bottom: 3rem; }
 
+  /* VIDEO SECTION FINAL FIXES */
+  .phone-section { background: var(--bg); padding: 5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; position: relative; }
+  .phone-section .section-sub { margin-left: auto; margin-right: auto; text-align: center; } 
+  
+  .video-container { width: 100%; max-width: 900px; margin: 2.5rem auto 0; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1); line-height: 0; position: relative; z-index: 2; }
+  .video-container video { width: 100%; height: auto; display: block; }
+
+  /* FLOATING HAPPINESS EMOJIS */
+  .floating-icons { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+  .float-icon { position: absolute; font-size: 45px; opacity: 0; animation: floatUp 5s infinite ease-in-out; }
+  @keyframes floatUp {
+    0% { transform: translateY(150px) translateX(0) scale(0.6); opacity: 0; }
+    20% { opacity: 0.7; }
+    80% { opacity: 0.7; }
+    100% { transform: translateY(-300px) translateX(20px) scale(1.1); opacity: 0; }
+  }
+
   .problem { background: var(--white); }
   .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .problem-story { background: var(--blue-light); border-radius: 16px; padding: 2rem; border-left: 4px solid var(--blue); font-style: italic; color: var(--text); font-size: 1rem; line-height: 1.75; }
@@ -118,11 +135,6 @@
   .testi-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
   .testi-name { font-weight: 700; font-size: 0.875rem; }
   .testi-role { font-size: 0.775rem; color: var(--muted); }
-
-  /* VIDEO SECTION FIXES */
-  .phone-section { background: var(--bg); padding: 5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .video-container { width: 100%; max-width: 900px; margin: 2.5rem auto 0; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1); line-height: 0; }
-  .video-container video { width: 100%; height: auto; display: block; }
 
   .cta-section { background: linear-gradient(135deg, var(--blue) 0%, #5B8AF0 100%); color: #fff; text-align: center; padding: 5rem 2rem; }
   .cta-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; }
@@ -218,6 +230,28 @@
       <div class="stat"><div class="stat-num">2 min</div><div class="stat-label">To generate a lesson plan</div></div>
       <div class="stat"><div class="stat-num">10+ hrs</div><div class="stat-label">Saved per week, per teacher</div></div>
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support & guidance</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="phone-section">
+  <div class="floating-icons">
+    <div class="float-icon" style="left:5%; animation-delay: 0s;">🍷</div>
+    <div class="float-icon" style="left:88%; animation-delay: 1.5s;">❤️</div>
+    <div class="float-icon" style="left:12%; animation-delay: 3s;">😌</div>
+    <div class="float-icon" style="left:82%; animation-delay: 0.5s;">⭐</div>
+    <div class="float-icon" style="left:20%; animation-delay: 4.5s;">🍷</div>
+    <div class="float-icon" style="left:75%; animation-delay: 2s;">☀️</div>
+  </div>
+
+  <div class="container">
+    <div class="section-label">See It In Action</div>
+    <h2 class="section-title">Built for how teachers actually work</h2>
+    <p class="section-sub">Fast, intuitive, and always in your pocket.</p>
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="demo.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -326,19 +360,6 @@
   </div>
 </section>
 
-<section class="phone-section">
-  <div class="container">
-    <div class="section-label">See It In Action</div>
-    <h2 class="section-title">Built for how teachers actually work</h2>
-    <p class="section-sub">Fast, intuitive, and always in your pocket.</p>
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="demo.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
 <section class="instagram-section">
   <div class="container">
     <p style="font-size:0.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Join Our Community</p>
@@ -363,14 +384,14 @@
       <button class="btn-white" onclick="handleSignup('ctaEmail','ctaSuccess')">Sign Up for Pre-Release</button>
     </div>
     <div class="success-msg" id="ctaSuccess" style="background:rgba(255,255,255,0.15);color:#fff;">🎉 Redirecting to secure sign-up...</div>
-    <p class="cta-note">No credit card required · Cancel anytime · FERPA compliant</p>
+    <p class=\"cta-note\">No credit card required · Cancel anytime · FERPA compliant</p>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="EducAItor Logo" class="logo-img" style="height:30px;">
-    <div class="footer-logo-text">Educ<em>AI</em>tor</div>
+  <div class=\"footer-inner\">
+    <img src=\"logo.png\" alt=\"EducAItor Logo\" class=\"logo-img\" style=\"height:30px;\">
+    <div class=\"footer-logo-text\">Educ<em>AI</em>tor</div>
   </div>
   <p>© 2025 EducAItor. All rights reserved. · Built for teachers, by people who care about education.</p>
 </footer>

@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EducAItor – Teachers' Right Hand</title>
+<meta name="title" content="EducAItor – Teachers' Right Hand">
+<meta name="description" content="The AI-powered assistant that turns hours of lesson planning and grading into minutes. Built for teachers, by people who care about education.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.educaitor.pro/">
+<meta property="og:title" content="EducAItor – Teachers' Right Hand">
+<meta property="og:description" content="Save 10+ hours a week. AI-powered lesson plans, smart grading, and 24/7 support.">
+<meta property="og:image" content="https://www.educaitor.pro/logo.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.educaitor.pro/">
+<meta property="twitter:title" content="EducAItor – Teachers' Right Hand">
+<meta property="twitter:description" content="Save 10+ hours a week. AI-powered lesson plans, smart grading, and 24/7 support.">
+<meta property="twitter:image" content="https://www.educaitor.pro/logo.png">
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -169,10 +185,10 @@
     <img src="logo.png" alt="EducAItor Logo" class="logo-img">
     <span class="nav-logo-text">Educ<em>AI</em>tor</span>
   </a>
-  <a href="#signup" class="nav-cta">Sign Up for Pre-Release</a>
+  <a href="#hero-signup" class="nav-cta">Sign Up for Pre-Release</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="hero-signup">
   <div class="hero-content">
     <img src="logo.png" alt="EducAItor Logo" class="hero-main-logo">
     <div class="hero-badge">🎓 Now Accepting Pre-Release Signups</div>
@@ -217,7 +233,7 @@
         </div>
       </div>
     </div>
-    <div class="hero-form" id="signup">
+    <div class="hero-form">
       <input type="email" placeholder="Enter your email address" id="heroEmail" />
       <button class="btn-primary" onclick="handleSignup('heroEmail','heroSuccess')">Sign Up for Pre-Release</button>
     </div>

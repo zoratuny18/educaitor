@@ -24,10 +24,7 @@
 
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 5rem; background: linear-gradient(160deg, #ffffff 0%, #EEF2FF 60%, #e8f5f0 100%); position: relative; overflow: hidden; }
   .hero-content { max-width: 800px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
-  
-  /* LOGO IN HERO */
   .hero-main-logo { width: 120px; height: auto; margin-bottom: 1.5rem; }
-  
   .hero-badge { display: inline-block; background: var(--blue-light); color: var(--blue); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem; text-transform: uppercase; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.25rem; }
   .hero h1 span { color: var(--blue); }
@@ -79,14 +76,12 @@
   .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.75px; line-height: 1.2; margin-bottom: 1rem; }
   .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-bottom: 3rem; }
 
-  /* VIDEO SECTION FINAL FIXES */
   .phone-section { background: var(--bg); padding: 5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; position: relative; }
   .phone-section .section-sub { margin-left: auto; margin-right: auto; text-align: center; } 
   
   .video-container { width: 100%; max-width: 900px; margin: 2.5rem auto 0; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1); line-height: 0; position: relative; z-index: 2; }
   .video-container video { width: 100%; height: auto; display: block; }
 
-  /* FLOATING HAPPINESS EMOJIS */
   .floating-icons { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; overflow: hidden; z-index: 1; }
   .float-icon { position: absolute; font-size: 45px; opacity: 0; animation: floatUp 5s infinite ease-in-out; }
   @keyframes floatUp {
@@ -172,10 +167,10 @@
     <img src="logo.png" alt="EducAItor Logo" class="logo-img">
     <span class="nav-logo-text">Educ<em>AI</em>tor</span>
   </a>
-  <a href="#signup" class="nav-cta">Sign Up for Pre-Release</a>
+  <a href="#hero-signup" class="nav-cta">Sign Up for Pre-Release</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="hero-signup">
   <div class="hero-content">
     <img src="logo.png" alt="EducAItor Logo" class="hero-main-logo">
     <div class="hero-badge">🎓 Now Accepting Pre-Release Signups</div>
@@ -220,7 +215,7 @@
         </div>
       </div>
     </div>
-    <div class="hero-form" id="signup">
+    <div class="hero-form">
       <input type="email" placeholder="Enter your email address" id="heroEmail" />
       <button class="btn-primary" onclick="handleSignup('heroEmail','heroSuccess')">Sign Up for Pre-Release</button>
     </div>
@@ -364,7 +359,6 @@
   <div class="container">
     <p style="font-size:0.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Join Our Community</p>
     <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.75rem;">Follow us on Instagram</h2>
-    <p style="color:var(--muted);font-size:1rem;margin-bottom:1.5rem;">Behind the scenes, tips for teachers, and updates from the EducAItor community.</p>
     <a href="https://www.instagram.com/educaitor.pro/" target="_blank" rel="noopener noreferrer" class="ig-btn">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="2"/>
@@ -384,16 +378,15 @@
       <button class="btn-white" onclick="handleSignup('ctaEmail','ctaSuccess')">Sign Up for Pre-Release</button>
     </div>
     <div class="success-msg" id="ctaSuccess" style="background:rgba(255,255,255,0.15);color:#fff;">🎉 Redirecting to secure sign-up...</div>
-    <p class=\"cta-note\">No credit card required · Cancel anytime · FERPA compliant</p>
   </div>
 </section>
 
 <footer>
-  <div class=\"footer-inner\">
-    <img src=\"logo.png\" alt=\"EducAItor Logo\" class=\"logo-img\" style=\"height:30px;\">
-    <div class=\"footer-logo-text\">Educ<em>AI</em>tor</div>
+  <div class="footer-inner">
+    <img src="logo.png" alt="EducAItor Logo" class="logo-img" style="height:30px;">
+    <div class="footer-logo-text">Educ<em>AI</em>tor</div>
   </div>
-  <p>© 2025 EducAItor. All rights reserved. · Built for teachers, by people who care about education.</p>
+  <p>© 2025 EducAItor. All rights reserved.</p>
 </footer>
 
 <script>

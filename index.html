@@ -6,18 +6,18 @@
 
 <title>EducAItor – Teachers' Right Hand</title>
 <meta name="title" content="EducAItor – Teachers' Right Hand">
-<meta name="description" content="The AI-powered assistant that turns hours of lesson planning and grading into minutes. Built for teachers, by people who care about education.">
+<meta name="description" content="The teaching assistant that turns hours of lesson planning and grading into minutes. Built for teachers, by someone who was one.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.educaitor.pro/">
 <meta property="og:title" content="EducAItor – Teachers' Right Hand">
-<meta property="og:description" content="Save 10+ hours a week. AI-powered lesson plans, smart grading, and 24/7 support.">
+<meta property="og:description" content="Save 10+ hours a week. Lesson plans, smart grading, and 24/7 support — all in one place.">
 <meta property="og:image" content="https://www.educaitor.pro/logo.png">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://www.educaitor.pro/">
 <meta property="twitter:title" content="EducAItor – Teachers' Right Hand">
-<meta property="twitter:description" content="Save 10+ hours a week. AI-powered lesson plans, smart grading, and 24/7 support.">
+<meta property="twitter:description" content="Save 10+ hours a week. Lesson plans, smart grading, and 24/7 support — all in one place.">
 <meta property="twitter:image" content="https://www.educaitor.pro/logo.png">
 
 <style>
@@ -35,13 +35,17 @@
   .logo-img { height: 40px; width: auto; display: block; }
   .nav-logo-text { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
   .nav-logo-text em { font-style: normal; color: var(--blue); }
-  .nav-cta { background: var(--blue); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-  .nav-cta:hover { background: var(--blue-dark); }
+  .nav-cta { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 0.6rem 1.5rem; border-radius: 100px; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 14px rgba(59,111,232,0.3); letter-spacing: 0.3px; }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,111,232,0.4); }
 
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 5rem; background: linear-gradient(160deg, #ffffff 0%, #EEF2FF 60%, #e8f5f0 100%); position: relative; overflow: hidden; }
   .hero-content { max-width: 800px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
   
-  .hero-main-logo { width: 120px; height: auto; margin-bottom: 1.5rem; }
+  .hero-main-logo { width: 200px; height: auto; margin-bottom: 1.5rem; animation: logoFloat 4s ease-in-out infinite; filter: drop-shadow(0 8px 32px rgba(59,111,232,0.25)); }
+  @keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); filter: drop-shadow(0 8px 32px rgba(59,111,232,0.25)); }
+    50% { transform: translateY(-10px); filter: drop-shadow(0 20px 40px rgba(59,111,232,0.4)); }
+  }
   
   .hero-badge { display: inline-block; background: var(--blue-light); color: var(--blue); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem; text-transform: uppercase; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.25rem; }
@@ -80,8 +84,14 @@
   .hero-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 480px; margin: 0 auto 1rem; }
   .hero-form input { flex: 1; min-width: 220px; padding: 0.85rem 1.25rem; border-radius: 10px; border: 1.5px solid var(--border); font-size: 0.95rem; font-family: inherit; outline: none; background: #fff; transition: border 0.2s; }
   .hero-form input:focus { border-color: var(--blue); }
-  .btn-primary { background: var(--blue); color: #fff; padding: 0.85rem 1.75rem; border-radius: 10px; font-size: 0.95rem; font-weight: 600; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.1s; white-space: nowrap; }
-  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .btn-primary { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(59,111,232,0.35), inset 0 1px 0 rgba(255,255,255,0.15); letter-spacing: 0.3px; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,111,232,0.45), inset 0 1px 0 rgba(255,255,255,0.15); }
+  .btn-white { background: #fff; color: var(--blue); padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9); letter-spacing: 0.3px; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+  .btn-green { background: linear-gradient(135deg, #16A34A 0%, #15803D 100%); color: #fff; padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(22,163,74,0.35), inset 0 1px 0 rgba(255,255,255,0.15); letter-spacing: 0.3px; text-decoration: none; display: inline-block; }
+  .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(22,163,74,0.45); }
+  .btn-dark { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(59,111,232,0.4), inset 0 1px 0 rgba(255,255,255,0.15); letter-spacing: 0.3px; text-decoration: none; display: inline-block; }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,111,232,0.5); }
   .hero-note { font-size: 0.8rem; color: var(--muted); }
   .hero-stats { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--border); width: 100%; }
   .stat { text-align: center; }
@@ -154,20 +164,25 @@
   .cta-section p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 2.5rem; }
   .cta-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 460px; margin: 0 auto 1rem; }
   .cta-form input { flex: 1; min-width: 200px; padding: 0.85rem 1.25rem; border-radius: 10px; border: none; font-size: 0.95rem; font-family: inherit; outline: none; color: #1A1A2E; }
-  .btn-white { background: #fff; color: var(--blue); padding: 0.85rem 1.75rem; border-radius: 10px; font-size: 0.95rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: opacity 0.2s, transform 0.1s; white-space: nowrap; }
-  .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
   .cta-note { font-size: 0.8rem; opacity: 0.7; }
   .success-msg { display: none; background: #F0FDF4; color: #16A34A; padding: 0.75rem 1.5rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; }
 
-  .instagram-section { background: #fff; padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); }
-  .ig-btn { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-radius: 16px; box-shadow: 0 4px 20px rgba(220,39,67,0.35); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; }
-  .ig-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(220,39,67,0.45); }
+  .instagram-section { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); padding: 5rem 2rem; text-align: center; color: #fff; }
+  .ig-btn { display: inline-flex; align-items: center; justify-content: center; background: none; border: none; text-decoration: none; transition: all 0.25s; }
+  .ig-btn:hover { transform: scale(1.1); filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3)); }
+  .ig-icon { width: 80px; height: 80px; flex-shrink: 0; }
 
-  footer { background: var(--text); color: #9CA3AF; padding: 2.5rem 2rem; text-align: center; }
+  footer { background: #0F0F1A; color: #6B7280; padding: 4rem 2rem 2rem; }
   .footer-inner { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 0.5rem; }
   .footer-logo-text { font-size: 1.2rem; font-weight: 800; color: #fff; }
   .footer-logo-text em { font-style: normal; color: var(--blue); }
-  footer p { font-size: 0.825rem; }
+  .footer-tagline { font-size: 0.9rem; color: #6B7280; text-align: center; margin-bottom: 2.5rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .footer-links a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1.5rem; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1080px; margin: 0 auto; font-size: 0.8rem; }
+  @media (max-width: 600px) { .footer-bottom { flex-direction: column; text-align: center; } }
 
   @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) {
@@ -185,15 +200,15 @@
     <img src="logo.png" alt="EducAItor Logo" class="logo-img">
     <span class="nav-logo-text">Educ<em>AI</em>tor</span>
   </a>
-  <a href="#hero-signup" class="nav-cta">Sign Up for Pre-Release</a>
+  <a href="https://app.educaitor.pro" class="nav-cta">Start Free</a>
 </nav>
 
 <section class="hero" id="hero-signup">
   <div class="hero-content">
     <img src="logo.png" alt="EducAItor Logo" class="hero-main-logo">
-    <div class="hero-badge">🎓 Now Accepting Pre-Release Signups</div>
+    <div class="hero-badge">🎓 Now Live</div>
     <h1>EducAItor<br><span>Teachers' Right Hand</span></h1>
-    <p>The AI-powered assistant that turns hours of lesson planning, grading, and admin work into minutes — so you can focus on why you became a teacher.</p>
+    <p>Hours of lesson planning, grading, and paperwork — done in minutes. So you can focus on why you became a teacher.</p>
     <div class="browser-wrap">
       <div class="browser-bar">
         <div class="b-dots"><div class="b-dot r"></div><div class="b-dot y"></div><div class="b-dot g"></div></div>
@@ -234,15 +249,14 @@
       </div>
     </div>
     <div class="hero-form">
-      <input type="email" placeholder="Enter your email address" id="heroEmail" />
-      <button class="btn-primary" onclick="handleSignup('heroEmail','heroSuccess')">Sign Up for Pre-Release</button>
+      <a href="https://app.educaitor.pro" class="btn-primary" style="text-decoration:none;display:inline-block;">Start Free</a>
     </div>
-    <div class="success-msg" id="heroSuccess">🎉 Redirecting to secure sign-up...</div>
-    <p class="hero-note">Free during beta · No credit card required · Join 1000+ elite teachers worldwide</p>
+    <div class="success-msg" id="heroSuccess">🎉 Redirecting to EducAItor...</div>
+    <p class="hero-note">7-day free trial · Cancel anytime</p>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">2 min</div><div class="stat-label">To generate a lesson plan</div></div>
-      <div class="stat"><div class="stat-num">10+ hrs</div><div class="stat-label">Saved per week, per teacher</div></div>
-      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support & guidance</div></div>
+      <div class="stat"><div class="stat-num">10+ hrs</div><div class="stat-label">Back in your week. Every week.</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support that actually shows up.</div></div>
+      <div class="stat"><div class="stat-num">$5</div><div class="stat-label">Per referral. Bring a colleague. Get paid.</div></div>
     </div>
   </div>
 </section>
@@ -275,25 +289,25 @@
       <div>
         <div class="section-label">The Problem</div>
         <h2 class="section-title">Teachers are burning out. We're here to change that.</h2>
-        <p class="section-sub">90% of teachers report burnout as a serious concern. The culprit? Not the kids — it's the endless administrative burden.</p>
+        <p class="section-sub">The problem was never the kids. It was everything else.</p>
         <div class="problem-points">
           <div class="problem-point">
             <div class="problem-icon">⏰</div>
-            <div><h4>Hours lost every week</h4><p>Lesson planning, grading, and admin tasks consume a minimum of 10 hours per week outside the classroom — that's 40 hours a month. The equivalent of a part-time job. Unpaid.</p></div>
+            <div><h4>A part-time job. Unpaid.</h4><p>Lesson planning, grading, and paperwork consume 10+ hours a week outside the classroom. 40 hours a month. On top of everything else.</p></div>
           </div>
           <div class="problem-point">
             <div class="problem-icon">🧍</div>
-            <div><h4>Isolation at 10 PM</h4><p>No one to turn to when you're stuck on a classroom challenge late at night.</p></div>
+            <div><h4>Expectations up. Resources down.</h4><p>More is asked of teachers every year. What's provided to help them deliver it? Less. At 10 PM, there's no one to call.</p></div>
           </div>
           <div class="problem-point">
             <div class="problem-icon">📉</div>
-            <div><h4>Invisible impact</h4><p>Teachers rarely see the measurable difference they make — leading to disillusionment.</p></div>
+            <div><h4>Invisible impact.</h4><p>You change lives daily — but never see it. No data, no recognition, no proof of the difference you make.</p></div>
           </div>
         </div>
       </div>
       <div class="problem-story">
         "It's Sunday evening. My family is watching a movie in the next room, but I'm facing down another three hours of lesson planning. I became a teacher to inspire kids — not to drown in paperwork."
-        <cite>— Sarah, 4th Grade Teacher, 8 years experience</cite>
+        <cite>— Sarah, Year 4 · 8 years teaching</cite>
       </div>
     </div>
   </div>
@@ -308,26 +322,26 @@
       <div class="feature-card">
         <div class="feature-icon">📝</div>
         <h3>Lesson Planner</h3>
-        <p>Generate curriculum-aligned, standards-based lesson plans in under 2 minutes. Input your grade, subject, and topic — and get a complete plan ready to export.</p>
+        <p>Grade, subject, topic — and a complete, curriculum-aligned lesson plan with worksheets is ready in under 2 minutes. Export to PDF or print. Done.</p>
         <span class="feature-tag">Saves 45–60 min per lesson</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✅</div>
         <h3>Smart Grading</h3>
-        <p>Upload photos of student work. AI evaluates against your rubric, generates personalized feedback in your voice, and flags class-wide knowledge gaps.</p>
-        <span class="feature-tag">Grade 30 papers in under 30 min</span>
+        <p>Upload handwritten student work. Get rubric-based scores, written feedback in your voice, and class-wide patterns — instantly. You review. You decide. Always.</p>
+        <span class="feature-tag">Grade 30 papers in 15 min</span>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🫂</div>
-        <h3>24/7 Support Chat</h3>
-        <p>Stop carrying the weight of the classroom home. Vent, de-stress, and work through challenges in a strictly confidential space. When leadership isn't listening, EducAItor always is.</p>
-        <span class="feature-tag">Always on, always private</span>
+        <div class="feature-icon">💬</div>
+        <h3>Professional Support</h3>
+        <p>A confidential space to think, vent, and get evidence-based guidance — any time of day or night. A presence that understands what teaching actually feels like.</p>
+        <span class="feature-tag">Always on. Always private.</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📊</div>
-        <h3>Impact Dashboard</h3>
-        <p>See your time saved, lessons created, assignments graded, and referral earnings. Visualize the real difference you're making — in hours, dollars, and student lives.</p>
-        <span class="feature-tag">Track your growth</span>
+        <h3>Personal Analytics</h3>
+        <p>Every lesson, every paper, every hour saved — tracked and organized in one personal dashboard. Your impact, your data, your professional record. Yours to keep, wherever you go.</p>
+        <span class="feature-tag">Your data. Your eyes only.</span>
       </div>
     </div>
   </div>
@@ -339,12 +353,22 @@
     <h2 class="section-title">From signup to saved hours in minutes.</h2>
     <p class="section-sub">Getting started takes less time than writing a single lesson plan.</p>
     <div class="steps">
-      <div class="step"><div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div><div class="step-content"><h4>Create your profile</h4><p>Tell us your grade level, subjects, and teaching style. EducAItor personalizes everything to you from day one.</p></div></div>
-      <div class="step"><div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div><div class="step-content"><h4>Generate your first lesson plan</h4><p>Pick a topic, hit generate, and get a complete standards-aligned lesson plan in under 2 minutes. Export to PDF or Word instantly.</p></div></div>
-      <div class="step"><div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div><div class="step-content"><h4>Grade smarter, not harder</h4><p>Upload photos of student work. AI grades against your rubric and generates feedback that sounds like you — review and approve in minutes.</p></div></div>
-      <div class="step"><div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div><div class="step-content"><h4>Get support anytime</h4><p>Stuck on a classroom challenge at 10 PM? Open the chat. Always available and ready with evidence-based guidance.</p></div></div>
-      <div class="step"><div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div><div class="step-content"><h4>Watch your impact grow</h4><p>Your dashboard tracks every hour saved, every assignment graded, and every dollar earned from referrals. See your impact — it's bigger than you think.</p></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div><div class="step-content"><h4>Create your profile</h4><p>Grade level, subjects, teaching style. EducAItor personalizes to you from day one.</p></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div><div class="step-content"><h4>Generate your first lesson plan</h4><p>Topic in, full plan out. Standards-aligned, worksheet included, ready to export.</p></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div><div class="step-content"><h4>Grade smarter</h4><p>Upload student work, get rubric-based scores and feedback that sounds like you. Review and approve in minutes.</p></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div><div class="step-content"><h4>Support on demand</h4><p>Overwhelmed at 10 PM? Open professional support. Always available, always confidential.</p></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div><div class="step-content"><h4>See your impact</h4><p>Every hour saved, every paper graded, every dollar earned. Your dashboard shows you the full picture.</p></div></div>
     </div>
+  </div>
+</section>
+
+<section class="mission-teaser" style="background:#1A1A2E; color:#fff; padding:5rem 2rem; text-align:center;">
+  <div class="container" style="max-width:680px;">
+    <div style="font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Our Mission</div>
+    <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.75px;line-height:1.2;margin-bottom:1.25rem;">We're not another EdTech tool.</h2>
+    <p style="font-size:1.05rem;color:#9CA3AF;margin-bottom:0.75rem;">EdTech was built for districts. For systems. For administrators. The teacher was always last.</p>
+    <p style="font-size:1.05rem;color:#9CA3AF;margin-bottom:2rem;">We built EducAItor because teachers deserve a right hand — not another thing to learn, manage, or troubleshoot in front of 30 kids.</p>
+    <a href="/mission" class="btn-dark">Read Our Mission →</a>
   </div>
 </section>
 
@@ -357,56 +381,86 @@
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote">"I used to spend my entire Sunday planning lessons. Now I'm done in 20 minutes and actually have a weekend. This tool gave me my life back."</p>
-        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sarah M.</div><div class="testi-role">4th Grade Teacher · 8 years</div></div></div>
+        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sarah M.</div><div class="testi-role">Year 4 · 8 years teaching</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote">"Grading lab reports used to consume my entire evening. EducAItor handles it in a fraction of the time — and the feedback actually sounds like me."</p>
-        <div class="testi-author"><div class="testi-avatar" style="background:#22C48A">M</div><div><div class="testi-name">Marcus T.</div><div class="testi-role">High School Science Teacher · 3 years</div></div></div>
+        <div class="testi-author"><div class="testi-avatar" style="background:#22C48A">M</div><div><div class="testi-name">Marcus T.</div><div class="testi-role">Year 11 Science · 3 years teaching</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote">"At 10 PM when I'm overwhelmed, I open the chat. It's the only place I can talk through classroom challenges with someone who actually understands teaching."</p>
-        <div class="testi-author"><div class="testi-avatar" style="background:#F59E0B">J</div><div><div class="testi-name">Jennifer K.</div><div class="testi-role">Middle School English · 15 years</div></div></div>
+        <div class="testi-author"><div class="testi-avatar" style="background:#F59E0B">J</div><div><div class="testi-name">Jennifer K.</div><div class="testi-role">Year 8 English · 15 years teaching</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="instagram-section">
-  <div class="container">
-    <p style="font-size:0.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Join Our Community</p>
-    <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.75rem;">Follow us on Instagram</h2>
-    <p style="color:var(--muted);font-size:1rem;margin-bottom:1.5rem;">Behind the scenes, tips for teachers, and updates from the EducAItor community.</p>
+  <div class="container" style="max-width:680px;">
+    <div style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:1rem;">Community</div>
+    <h2 style="font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:1rem;">Follow us<br>on Instagram</h2>
+    <p style="font-size:0.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:1.25rem;">Follow us</p>
     <a href="https://www.instagram.com/educaitor.pro/" target="_blank" rel="noopener noreferrer" class="ig-btn">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="2"/>
-        <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2"/>
-        <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+      <svg class="ig-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+            <stop offset="0%" stop-color="#fdf497"/>
+            <stop offset="5%" stop-color="#fdf497"/>
+            <stop offset="45%" stop-color="#fd5949"/>
+            <stop offset="60%" stop-color="#d6249f"/>
+            <stop offset="90%" stop-color="#285AEB"/>
+          </radialGradient>
+        </defs>
+        <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#ig-grad)"/>
+        <circle cx="24" cy="24" r="9" stroke="white" stroke-width="3" fill="none"/>
+        <circle cx="35" cy="13" r="2.5" fill="white"/>
       </svg>
     </a>
+  </div>
+</section>
+
+<section class="affiliate-teaser" style="background:#F0FDF4;padding:5rem 2rem;text-align:center;border-top:1px solid var(--border);">
+  <div class="container" style="max-width:680px;">
+    <div style="font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#16A34A;margin-bottom:0.75rem;">Affiliate Program</div>
+    <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.75px;line-height:1.2;margin-bottom:1.25rem;">Love EducAItor? Your colleagues will too — and you'll get paid for it.</h2>
+    <p style="font-size:1.05rem;color:var(--muted);margin-bottom:2rem;">Every teacher you bring in earns you $5. No cap. No complicated rules. Just share what's already working for you.</p>
+    <a href="/affiliate" class="btn-green">Join the Program. Start Earning. →</a>
   </div>
 </section>
 
 <section class="cta-section">
   <div class="container">
     <h2>Ready to rediscover why you became a teacher?</h2>
-    <p>Join thousands of educators already inside the community. Free during beta.</p>
-    <div class="cta-form">
-      <input type="email" placeholder="Enter your email address" id="ctaEmail" />
-      <button class="btn-white" onclick="handleSignup('ctaEmail','ctaSuccess')">Sign Up for Pre-Release</button>
+    <p>Start today. Your right hand is waiting.</p>
+    <div style="margin:0 auto 1rem;">
+      <a href="https://app.educaitor.pro" class="btn-white" style="text-decoration:none;display:inline-block;">Start Free</a>
     </div>
-    <div class="success-msg" id="ctaSuccess" style="background:rgba(255,255,255,0.15);color:#fff;">🎉 Redirecting to secure sign-up...</div>
-    <p class="cta-note">No credit card required · Cancel anytime · FERPA compliant</p>
+    <p class="cta-note">7-day free trial · Cancel anytime · FERPA compliant</p>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="EducAItor Logo" class="logo-img" style="height:30px;">
-    <div class="footer-logo-text">Educ<em>AI</em>tor</div>
+  <div style="max-width:1080px;margin:0 auto;text-align:center;">
+    <div class="footer-inner">
+      <img src="logo.png" alt="EducAItor Logo" class="logo-img" style="height:36px;">
+      <div class="footer-logo-text">Educ<em>AI</em>tor</div>
+    </div>
+    <p class="footer-tagline">Teaching is the most important job in the world. It's time it was treated that way.</p>
+    <div class="footer-links">
+      <a href="/mission">Our Mission</a>
+      <a href="/affiliate">Affiliate Program</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="https://www.instagram.com/educaitor.pro/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 EducAItor · Delaware, USA</span>
+      <span>support@educaitor.pro · contact@educaitor.pro</span>
+    </div>
   </div>
-  <p>© 2025 EducAItor. All rights reserved. · Built for teachers, by people who care about education.</p>
 </footer>
 
 <script>

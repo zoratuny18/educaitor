@@ -60,6 +60,13 @@
   .stat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3B6FE8, #7C3AED); }
   .stat-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--blue); letter-spacing: -1px; line-height: 1; margin-bottom: 0.5rem; }
   .stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.4; font-weight: 500; }
+  @media (max-width: 600px) {
+    .hero-stats { grid-template-columns: 1fr; max-width: 320px; gap: 0.75rem; }
+    .stat { padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1.25rem; text-align: left; border-radius: 16px; }
+    .stat::before { width: 3px; height: 100%; top: 0; left: 0; right: auto; }
+    .stat-num { font-size: 2rem; margin-bottom: 0; flex-shrink: 0; }
+    .stat-label { font-size: 0.82rem; line-height: 1.4; }
+  }
 
   .browser-wrap { margin: 0 auto 2.5rem; max-width: 640px; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(59,111,232,0.18); border: 1px solid var(--border); width: 100%; }
   .browser-bar { background: #F3F4F6; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid var(--border); }
@@ -207,6 +214,7 @@
     <img src="logo.png" alt="EducAItor Logo" class="logo-img">
     <span class="nav-logo-text">Educ<em>AI</em>tor</span>
   </a>
+  <a href="/pricing.html" style="font-size:0.875rem;font-weight:600;color:var(--text);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text)'">Pricing</a>
   <a href="https://app.educaitor.pro" class="nav-cta">Start Free</a>
 </nav>
 
@@ -462,9 +470,10 @@
     <p class="footer-tagline">Teaching is the most important job in the world. It's time it was treated that way.</p>
     <div class="footer-links">
       <a href="/mission.html">Our Mission</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/affiliate.html">Affiliate Program</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
       <a href="https://www.instagram.com/educaitor.pro/" target="_blank">Instagram</a>
     </div>
     <div class="footer-divider"></div>

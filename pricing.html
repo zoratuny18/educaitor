@@ -208,7 +208,7 @@
         </li>
       </ul>
       <div class="trial-note">7-day free trial included</div>
-      <a href="#" id="plus-btn" class="btn-card btn-blue">Start Free</a>
+      <a href="https://app.educaitor.pro" id="plus-btn" class="btn-card btn-blue">Start Free</a>
     </div>
 
     <!-- PRO -->
@@ -240,7 +240,7 @@
         </li>
       </ul>
       <div class="trial-note">7-day free trial included</div>
-      <a href="#" id="pro-btn" class="btn-card btn-dark">Get Pro</a>
+      <a href="https://app.educaitor.pro" id="pro-btn" class="btn-card btn-dark">Get Pro</a>
     </div>
 
   </div>
@@ -280,14 +280,9 @@
 </footer>
 
 <script>
-  const stripeLinks = {
-    plusMonthly: 'https://checkout.stripe.com/c/pay/cs_live_b1SUXHhrjEwDovbWKfhQkq2MWqEQ8aXlrWQObqJ9RlymToBjxgD5w5oqgW#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl',
-    plusAnnual: 'https://checkout.stripe.com/c/pay/cs_live_b15yyaH3uu9X0NoR6ikDiW8YjXdQLMisfN6C1CUvWR3bYdOwDEo0UH6f7d#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl',
-    pro: 'https://checkout.stripe.com/c/pay/cs_live_b1Gd0gKPSWnIN7NPGp1dp5mMlGE561kl6oMnrMRD8Mw0z4XXLtJvm0IX1a#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl'
-  };
-
-  const plusBtn = document.getElementById('plus-btn');
-  const proBtn = document.getElementById('pro-btn');
+  // All buttons point to sign up
+  document.getElementById('plus-btn').href = 'https://app.educaitor.pro';
+  document.getElementById('pro-btn').href = 'https://app.educaitor.pro';
   const labelMonthly = document.getElementById('label-monthly');
   const labelAnnual = document.getElementById('label-annual');
 
@@ -309,7 +304,7 @@
     document.getElementById('plus-period').textContent = p.plusPeriod;
     document.getElementById('plus-save').textContent = p.plusSave;
 
-    plusBtn.href = isAnnual ? stripeLinks.plusAnnual : stripeLinks.plusMonthly;
+    plusBtn.href = 'https://app.educaitor.pro';
 
     labelMonthly.classList.toggle('active', !isAnnual);
     labelAnnual.classList.toggle('active', isAnnual);

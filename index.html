@@ -90,9 +90,11 @@
   .g-result-desc { font-size: 0.8rem; color: #4D5156; line-height: 1.5; }
   .g-result-desc em { font-style: normal; font-weight: 600; color: var(--text); }
 
-  .hero-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 480px; margin: 0 auto 1rem; }
-  .hero-form input { flex: 1; min-width: 220px; padding: 0.85rem 1.25rem; border-radius: 10px; border: 1.5px solid var(--border); font-size: 0.95rem; font-family: inherit; outline: none; background: #fff; transition: border 0.2s; }
-  .hero-form input:focus { border-color: var(--blue); }
+  .hero-form { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 0 auto 1rem; }
+  .btn-hero { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 1.25rem 3rem; border-radius: 100px; font-size: 1.15rem; font-weight: 700; text-decoration: none; transition: all 0.25s; box-shadow: 0 6px 30px rgba(59,111,232,0.45), inset 0 1px 0 rgba(255,255,255,0.15); letter-spacing: 0.3px; display: inline-block; white-space: nowrap; }
+  .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(59,111,232,0.55), inset 0 1px 0 rgba(255,255,255,0.15); }
+  .btn-hero-secondary { background: transparent; color: var(--text); padding: 1.25rem 2rem; border-radius: 100px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.25s; border: 1.5px solid var(--border); display: inline-block; white-space: nowrap; }
+  .btn-hero-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
   .btn-primary { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(59,111,232,0.35), inset 0 1px 0 rgba(255,255,255,0.15); letter-spacing: 0.3px; }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,111,232,0.45), inset 0 1px 0 rgba(255,255,255,0.15); }
   .btn-white { background: #fff; color: var(--blue); padding: 1rem 2.25rem; border-radius: 100px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all 0.25s; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9); letter-spacing: 0.3px; }
@@ -254,7 +256,7 @@
       </div>
     </div>
     <div class="hero-form">
-      <a href="https://app.educaitor.pro" class="btn-primary" style="text-decoration:none;display:inline-block;">Start Free</a>
+      <a href="https://app.educaitor.pro" class="btn-hero">Start Free</a>
     </div>
     <div class="success-msg" id="heroSuccess">🎉 Redirecting to EducAItor...</div>
     <p class="hero-note">7-day free trial · Cancel anytime</p>
@@ -310,9 +312,14 @@
           </div>
         </div>
       </div>
-      <div class="problem-story">
-        "It's Sunday evening. My family is watching a movie in the next room, but I'm facing down another three hours of lesson planning. I became a teacher to inspire kids — not to drown in paperwork."
-        <cite>— Sarah, Year 4, 4th Grade</cite>
+      <div>
+        <div class="problem-story">
+          "It's Sunday evening. My family is watching a movie in the next room, but I'm facing down another three hours of lesson planning. I became a teacher to inspire kids — not to drown in paperwork."
+          <cite>— Sarah, Year 4, 4th Grade</cite>
+        </div>
+        <div style="margin-top:2rem;text-align:center;">
+          <a href="https://app.educaitor.pro" class="btn-hero" style="font-size:1rem;padding:1rem 2.5rem;">Try It On Your Next Lesson →</a>
+        </div>
       </div>
     </div>
   </div>

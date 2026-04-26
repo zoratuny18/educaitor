@@ -280,9 +280,6 @@
 </footer>
 
 <script>
-  // All buttons point to sign up
-  document.getElementById('plus-btn').href = 'https://app.educaitor.pro';
-  document.getElementById('pro-btn').href = 'https://app.educaitor.pro';
   const labelMonthly = document.getElementById('label-monthly');
   const labelAnnual = document.getElementById('label-annual');
 
@@ -304,15 +301,9 @@
     document.getElementById('plus-period').textContent = p.plusPeriod;
     document.getElementById('plus-save').textContent = p.plusSave;
 
-    plusBtn.href = 'https://app.educaitor.pro';
-
     labelMonthly.classList.toggle('active', !isAnnual);
     labelAnnual.classList.toggle('active', isAnnual);
   });
-
-  // Set initial Stripe links
-  plusBtn.href = stripeLinks.plusMonthly;
-  proBtn.href = stripeLinks.pro;
 </script>
 
 </body>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing – EducAItor</title>
+<meta name="description" content="Simple, honest pricing. Start free for 7 days. No school approval needed.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #3B6FE8; --blue-light: #EEF2FF; --blue-dark: #2451C7;
+    --green: #16A34A; --green-light: #F0FDF4;
+    --text: #1A1A2E; --muted: #6B7280; --border: #E5E7EB; --bg: #FAFAFA;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  h1, h2, h3 { font-family: var(--font-display); }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .logo-img { height: 40px; width: auto; display: block; }
+  .nav-logo-text { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .nav-logo-text em { font-style: normal; color: var(--blue); }
+  .nav-cta { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; padding: 0.6rem 1.5rem; border-radius: 100px; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 14px rgba(59,111,232,0.3); }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,111,232,0.4); }
+
+  /* HERO */
+  .hero { padding: 9rem 2rem 4rem; text-align: center; background: linear-gradient(160deg, #ffffff 0%, #EEF2FF 60%, #e8f5f0 100%); }
+  .hero-label { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2.75rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -1px; margin-bottom: 1rem; }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+
+  /* TOGGLE */
+  .toggle-wrap { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3.5rem; }
+  .toggle-label { font-size: 0.9rem; font-weight: 600; color: var(--muted); transition: color 0.2s; }
+  .toggle-label.active { color: var(--text); }
+  .toggle { position: relative; width: 52px; height: 28px; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider { position: absolute; inset: 0; background: var(--blue); border-radius: 100px; cursor: pointer; transition: background 0.2s; }
+  .toggle-slider::before { content: ''; position: absolute; width: 22px; height: 22px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+  .toggle input:checked + .toggle-slider::before { transform: translateX(24px); }
+  .save-badge { background: #DCFCE7; color: var(--green); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; }
+
+  /* CARDS */
+  .pricing-section { padding: 0 2rem 6rem; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1080px; margin: 0 auto; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 2rem; position: relative; transition: transform 0.25s, box-shadow 0.25s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+  .card.popular { border: 2px solid var(--blue); box-shadow: 0 8px 32px rgba(59,111,232,0.12); }
+  .card.pro { border: 2px solid var(--text); background: var(--text); color: #fff; }
+  .card-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 1.25rem; }
+  .card.popular .card-badge { background: var(--blue-light); color: var(--blue); }
+  .card.pro .card-badge { background: rgba(255,255,255,0.15); color: #fff; }
+  .card-name { font-family: var(--font-body); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .card.pro .card-name { color: #fff; }
+  .card-price { display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.35rem; }
+  .price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -1px; color: var(--text); }
+  .card.pro .price-amount { color: #fff; }
+  .price-period { font-size: 0.875rem; color: var(--muted); font-weight: 500; }
+  .card.pro .price-period { color: rgba(255,255,255,0.6); }
+  .price-save { font-size: 0.8rem; color: var(--green); font-weight: 600; margin-bottom: 1.5rem; height: 1.2rem; }
+  .card.pro .price-save { color: #86EFAC; }
+  .card-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+  .card.pro .card-divider { background: rgba(255,255,255,0.12); }
+  .features { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.875rem; color: #374151; line-height: 1.5; }
+  .card.pro .features li { color: rgba(255,255,255,0.85); }
+  .check { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+  .check-blue { color: var(--blue); }
+  .check-white { color: rgba(255,255,255,0.7); }
+  .trial-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-bottom: 0.75rem; }
+  .card.pro .trial-note { color: rgba(255,255,255,0.5); }
+
+  /* BUTTONS */
+  .btn-card { width: 100%; padding: 0.9rem; border-radius: 100px; font-size: 0.95rem; font-weight: 700; font-family: var(--font-body); text-align: center; text-decoration: none; display: block; transition: all 0.25s; cursor: pointer; border: none; }
+  .btn-outline { background: transparent; border: 2px solid var(--border); color: var(--text); }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-blue { background: linear-gradient(135deg, #3B6FE8 0%, #2451C7 100%); color: #fff; box-shadow: 0 4px 20px rgba(59,111,232,0.35); }
+  .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,111,232,0.45); }
+  .btn-dark { background: #fff; color: var(--text); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+  /* FAQ / NOTE */
+  .note-section { text-align: center; padding: 0 2rem 5rem; }
+  .note-section p { font-size: 0.9rem; color: var(--muted); max-width: 560px; margin: 0 auto 0.5rem; }
+  .note-section a { color: var(--blue); text-decoration: none; font-weight: 600; }
+
+  /* PITCH */
+  .pitch-section { background: var(--text); padding: 5rem 2rem; text-align: center; }
+  .pitch-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; color: #fff; margin-bottom: 1.25rem; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.2; }
+  .pitch-section p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto 1rem; line-height: 1.8; }
+  .pitch-section p:last-of-type { margin-bottom: 0; }
+  .pitch-highlight { color: #93C5FD; font-weight: 600; font-style: normal; }
+
+  /* FOOTER */
+  footer { background: #0F0F1A; color: #6B7280; padding: 3rem 2rem 2rem; text-align: center; }
+  .footer-inner { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+  .footer-logo-text { font-size: 1.2rem; font-weight: 800; color: #fff; }
+  .footer-logo-text em { font-style: normal; color: var(--blue); }
+  .footer-tagline { font-size: 0.85rem; color: #6B7280; margin-bottom: 1.5rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1.25rem; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1080px; margin: 0 auto; font-size: 0.8rem; }
+
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; max-width: 480px; } }
+  @media (max-width: 600px) { .footer-bottom { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="logo.png" alt="EducAItor Logo" class="logo-img">
+    <span class="nav-logo-text">Educ<em>AI</em>tor</span>
+  </a>
+  <a href="https://app.educaitor.pro" class="nav-cta">Start Free</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Pricing</div>
+  <h1>Simple, honest pricing.</h1>
+  <p class="hero-sub">Start free for 7 days. Cancel anytime.</p>
+
+  <div class="toggle-wrap">
+    <span class="toggle-label active" id="label-monthly">Monthly</span>
+    <label class="toggle">
+      <input type="checkbox" id="billing-toggle">
+      <span class="toggle-slider"></span>
+    </label>
+    <span class="toggle-label" id="label-annual">Annual <span class="save-badge">Save up to 40%</span></span>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="cards">
+
+    <!-- LITE -->
+    <div class="card">
+      <div class="card-name">Lite</div>
+      <div class="card-price">
+        <span class="price-amount" id="lite-price">$9.99</span>
+        <span class="price-period" id="lite-period">/mo</span>
+      </div>
+      <div class="price-save" id="lite-save">&nbsp;</div>
+      <div class="card-divider"></div>
+      <ul class="features">
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          1 class
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          10 lesson plans / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          5 worksheets / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          30 grading uploads / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          18 chat messages / day
+        </li>
+      </ul>
+      <div class="trial-note">7-day free trial included</div>
+      <a href="https://app.educaitor.pro" class="btn-card btn-outline">Start Free</a>
+    </div>
+
+    <!-- PLUS -->
+    <div class="card popular">
+      <div class="card-badge">Most Popular</div>
+      <div class="card-name">Plus</div>
+      <div class="card-price">
+        <span class="price-amount" id="plus-price">$14.99</span>
+        <span class="price-period" id="plus-period">/mo</span>
+      </div>
+      <div class="price-save" id="plus-save">&nbsp;</div>
+      <div class="card-divider"></div>
+      <ul class="features">
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          3 classes
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          40 lesson plans / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          20 worksheets / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          82 grading uploads / month
+        </li>
+        <li>
+          <svg class="check check-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          50 chat messages / day
+        </li>
+      </ul>
+      <div class="trial-note">7-day free trial included</div>
+      <a href="#" id="plus-btn" class="btn-card btn-blue">Start Free</a>
+    </div>
+
+    <!-- PRO -->
+    <div class="card pro">
+      <div class="card-badge">Best Value</div>
+      <div class="card-name">Pro</div>
+      <div class="card-price">
+        <span class="price-amount" style="color:#fff;">$149</span>
+        <span class="price-period">/yr</span>
+      </div>
+      <div class="price-save" style="color:#86EFAC;">Annual billing only</div>
+      <div class="card-divider"></div>
+      <ul class="features">
+        <li>
+          <svg class="check check-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Unlimited everything
+        </li>
+        <li>
+          <svg class="check check-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Priority grading queue
+        </li>
+        <li>
+          <svg class="check check-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Priority support
+        </li>
+        <li>
+          <svg class="check check-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Early access to new features
+        </li>
+      </ul>
+      <div class="trial-note">7-day free trial included</div>
+      <a href="#" id="pro-btn" class="btn-card btn-dark">Get Pro</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="note-section">
+  <p>All plans include a 7-day free trial. Cancel anytime. Questions? <a href="mailto:support@educaitor.pro">Contact us</a>.</p>
+  <p>Want to earn while you teach? <a href="/affiliate.html">Join our affiliate program →</a></p>
+</section>
+
+<section class="pitch-section">
+  <h2>Your tool. Your time.<br>Nobody else's business.</h2>
+  <p>If the system pays for your tools, they own the time you save — and they will always find more work to fill it. But when you invest in yourself, <em class="pitch-highlight">you own your time.</em></p>
+  <p>Think of EducAItor as your private assistant. You don't report your Google searches to the district, and you don't need a permission slip to be an efficient educator. You're paying for the results, and you own the hours you reclaim.</p>
+</section>
+
+<footer>
+  <div style="max-width:1080px;margin:0 auto;">
+    <div class="footer-inner">
+      <img src="logo.png" alt="EducAItor Logo" class="logo-img" style="height:32px;">
+      <div class="footer-logo-text">Educ<em>AI</em>tor</div>
+    </div>
+    <p class="footer-tagline">Teaching is the most important job in the world. It's time it was treated that way.</p>
+    <div class="footer-links">
+      <a href="/mission.html">Our Mission</a>
+      <a href="/affiliate.html">Affiliate Program</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="https://www.instagram.com/educaitor.pro/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 EducAItor · Delaware, USA</span>
+      <span>support@educaitor.pro · contact@educaitor.pro</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const stripeLinks = {
+    plusMonthly: 'https://checkout.stripe.com/c/pay/cs_live_b1SUXHhrjEwDovbWKfhQkq2MWqEQ8aXlrWQObqJ9RlymToBjxgD5w5oqgW#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl',
+    plusAnnual: 'https://checkout.stripe.com/c/pay/cs_live_b15yyaH3uu9X0NoR6ikDiW8YjXdQLMisfN6C1CUvWR3bYdOwDEo0UH6f7d#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl',
+    pro: 'https://checkout.stripe.com/c/pay/cs_live_b1Gd0gKPSWnIN7NPGp1dp5mMlGE561kl6oMnrMRD8Mw0z4XXLtJvm0IX1a#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FcXdwYCknYnBkZmRoamlgU2R3bGRrcSc%2FJ2Zqa3F3amknKSdkdWxOYHwnPyd1blppbHNgWjA0S1dARGZCSFxjcHdjQz1dNnZBZldISjBNQnZran9KalNWTW5MV1xBMlBNPH9wQ2BcVXdscml9NGxpa31KM2xyXU9sMFdhdkJiV01ORlFWaVZcaDRTPUh1NTVyd2ZGXTZQMicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl'
+  };
+
+  const plusBtn = document.getElementById('plus-btn');
+  const proBtn = document.getElementById('pro-btn');
+  const labelMonthly = document.getElementById('label-monthly');
+  const labelAnnual = document.getElementById('label-annual');
+
+  const prices = {
+    monthly: { lite: '$9.99', plus: '$14.99', litePeriod: '/mo', plusPeriod: '/mo', liteSave: '', plusSave: '' },
+    annual:  { lite: '$89.99', plus: '$129.99', litePeriod: '/yr', plusPeriod: '/yr', liteSave: 'Save 25% vs monthly', plusSave: 'Save 28% vs monthly' }
+  };
+
+  const toggle = document.getElementById('billing-toggle');
+
+  toggle.addEventListener('change', () => {
+    const isAnnual = toggle.checked;
+    const p = isAnnual ? prices.annual : prices.monthly;
+
+    document.getElementById('lite-price').textContent = p.lite;
+    document.getElementById('lite-period').textContent = p.litePeriod;
+    document.getElementById('lite-save').textContent = p.liteSave;
+    document.getElementById('plus-price').textContent = p.plus;
+    document.getElementById('plus-period').textContent = p.plusPeriod;
+    document.getElementById('plus-save').textContent = p.plusSave;
+
+    plusBtn.href = isAnnual ? stripeLinks.plusAnnual : stripeLinks.plusMonthly;
+
+    labelMonthly.classList.toggle('active', !isAnnual);
+    labelAnnual.classList.toggle('active', isAnnual);
+  });
+
+  // Set initial Stripe links
+  plusBtn.href = stripeLinks.plusMonthly;
+  proBtn.href = stripeLinks.pro;
+</script>
+
+</body>
+</html>

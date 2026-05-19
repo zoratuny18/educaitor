@@ -161,7 +161,7 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
@@ -209,7 +209,7 @@
     /* HERO HEADLINE — REDESIGNED */
     .hero-headline-wrap{max-width:620px;margin:0 auto 2.25rem;}
     .hero-headline-label{font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;}
-    .hero-headline-pain{font-family:var(--font-display);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:600;color:var(--text);line-height:1.25;margin-bottom:0.35rem;}
+    .hero-headline-pain{font-family:'Lora',Georgia,serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:600;color:var(--text);line-height:1.25;margin-bottom:0.35rem;}
     .hero-headline-sub{font-family:var(--font-display);font-size:clamp(1rem,2.2vw,1.45rem);font-weight:400;font-style:italic;color:var(--muted);line-height:1.3;margin-bottom:1.5rem;}
     .hero-headline-divider{width:48px;height:2px;background:var(--blue);margin:0 auto 1.5rem;border-radius:2px;}
     .hero-headline-main{font-family:var(--font-display);font-size:clamp(1.35rem,3vw,2rem);font-weight:700;color:var(--text);line-height:1.3;margin-bottom:0.4rem;}
@@ -378,16 +378,17 @@
   <section class="hero" id="hero-signup">
     <div class="hero-content">
       <img src="logo.png" alt="EducAItor Logo" class="hero-main-logo">
-      <div class="hero-badge">🎓 Now Live</div>
 
       <!-- REDESIGNED HEADLINE -->
       <div class="hero-headline-wrap">
-        <p class="hero-headline-label">Sound familiar?</p>
-        <p class="hero-headline-pain">Sunday. 11 PM. Papers on the table.</p>
+        <p class="hero-headline-label">Teacher, sounds familiar?</p>
+        <p class="hero-headline-pain">Sunday.</p>
+        <p class="hero-headline-pain">11 PM.</p>
+        <p class="hero-headline-pain">Papers on the table.</p>
         <p class="hero-headline-sub">This is not what you signed up for.</p>
         <div class="hero-headline-divider"></div>
         <p class="hero-headline-main">You don't have to live like this.</p>
-        <p class="hero-headline-coda">The assistant you deserve finally exists.</p>
+        <p style="font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:700;color:var(--blue);line-height:1.2;margin:0;">The assistant you deserve finally exists.</p>
       </div>
 
       <div class="browser-wrap">
@@ -446,9 +447,9 @@
   <!-- VIDEO -->
   <section style="background:#1A1A2E;padding:4rem 2rem;text-align:center;">
     <div class="container" style="max-width:900px;">
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:0.5rem;">You've seen the iconic Groundhog Day.</h2>
-      <p style="font-size:clamp(1.1rem,3vw,1.6rem);color:rgba(255,255,255,0.85);font-weight:600;margin-bottom:2rem;line-height:1.4;">Same alarm. Same day. Same everything. Until you get it right.<br><span style="color:#3B6FE8;font-weight:800;">Teachers, watch.</span></p>
-      <div style="border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.4);line-height:0;">
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:0.75rem;">It's Groundhog Day! Teacher version.</h2>
+      <p style="font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(255,255,255,0.85);font-weight:600;margin-bottom:2rem;line-height:1.4;">Same alarm. Same day. Same everything. Until you get it right.</p>
+      <div style="max-width:620px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.4);line-height:0;">
         <video autoplay muted loop playsinline style="width:100%;height:auto;display:block;">
           <source src="https://zoratuny18.github.io/educaitor/groundhog-ad-short-small.mp4" type="video/mp4">
         </video>
@@ -652,7 +653,7 @@
   <section class="faq-section">
     <div class="container" style="max-width:720px;">
       <div class="section-label" style="text-align:center;">Q&A</div>
-      <h2 class="section-title" style="text-align:center;font-family:'Cormorant Garamond',Georgia,serif;">Everything you need to know.</h2>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.75px;line-height:1.2;margin-bottom:1rem;text-align:center;">Everything you need to know.</h2>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">Is it really free to start?<span class="faq-icon">+</span></button>

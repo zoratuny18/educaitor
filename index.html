@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* HERO PHONE: screen proportions match the portrait dashboard image */
+    /* HERO PHONE: restored to the previous dimensions and contain behavior */
     .hero-visual {
       height: 440px;
       min-height: 440px;
@@ -28,9 +28,9 @@
 
     .phone-frame {
       box-sizing: border-box;
-      width: 202px;
+      width: 235px;
       height: 420px;
-      padding: 0;
+      padding: 7px;
       border: 7px solid #101c31;
       border-radius: 37px;
       background: #101c31;
@@ -44,7 +44,7 @@
       content: "";
       position: absolute;
       z-index: 3;
-      top: 0;
+      top: 6px;
       left: 50%;
       transform: translateX(-50%);
       width: 68px;
@@ -57,13 +57,13 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
-      border-radius: 27px;
+      border-radius: 24px;
       background: #fff;
     }
 
-    /* METRICS: each number sits inside its own laurel wreath */
+    /* METRICS: centered inside their laurel wings */
     .hero-metrics {
       display: flex;
       align-items: center;
@@ -100,6 +100,7 @@
       justify-content: center;
       gap: 3px;
       padding-top: 2px;
+      text-align: center;
     }
 
     .metric-content strong {
@@ -190,7 +191,7 @@
       object-fit: contain;
     }
 
-    /* FEATURE SECTION APP STORE BUTTONS */
+    /* PERSONAL SPACE APP STORE BUTTON */
     .feature-app-store {
       display: inline-block;
       width: 184px;
@@ -204,44 +205,11 @@
       height: auto;
     }
 
-    /* SMART GRADING: app badge below the image */
-    .grading-phone {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .personal-app-store {
+      margin-top: 24px;
     }
 
-    .grading-phone img {
-      display: block;
-      height: 420px;
-      max-width: 100%;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 15px 18px #173d6820);
-    }
-
-    .grading-phone .feature-app-store {
-      margin-top: 18px;
-    }
-
-    /* Privacy note sits directly below the class-picture card */
-    .workflow .privacy-note {
-      grid-column: 2;
-      justify-self: start;
-      align-self: start;
-      width: 100%;
-      max-width: 440px;
-      margin: 0;
-      padding: 4px 2px 0;
-      text-align: left;
-      color: #53647e;
-      font-size: 12px;
-      line-height: 1.55;
-    }
-
-    /* PERSONAL SPACE: referral action is a real button/link */
+    /* REFERRAL BUTTON */
     .referral-callout {
       display: flex;
       align-items: center;
@@ -250,6 +218,7 @@
       text-align: left;
       color: inherit;
       cursor: pointer;
+      text-decoration: none;
       transition: transform .2s, box-shadow .2s;
     }
 
@@ -263,24 +232,20 @@
       outline-offset: 3px;
     }
 
-    .personal-app-store {
-      margin-top: 24px;
-    }
-
     @media (max-width: 760px) {
       .hero-visual {
-        height: 385px;
-        min-height: 385px;
+        height: 365px;
+        min-height: 365px;
       }
 
       .phone-frame {
-        width: 178px;
-        height: 370px;
-        border-radius: 32px;
+        width: 190px;
+        height: 350px;
+        border-radius: 31px;
       }
 
       .phone-frame img {
-        border-radius: 23px;
+        border-radius: 21px;
       }
 
       .hero-metrics {
@@ -323,19 +288,6 @@
 
       .etsy-wordmark {
         font-size: 32px;
-      }
-
-      .grading-phone {
-        height: auto;
-      }
-
-      .grading-phone img {
-        height: 310px;
-      }
-
-      .workflow .privacy-note {
-        grid-column: 1;
-        max-width: none;
       }
 
       .feature-app-store {
@@ -382,7 +334,6 @@
         <div class="hero-copy">
 
           <div class="hero-metrics">
-
             <div class="metric">
               <svg class="metric-wings" viewBox="0 0 190 116" aria-hidden="true">
                 <g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
@@ -432,7 +383,6 @@
                 <span>Hours Saved</span>
               </div>
             </div>
-
           </div>
 
           <h1>The mobile app made exclusively for teachers.</h1>
@@ -562,7 +512,7 @@
       </div>
     </section>
 
-    <!-- LESSON PLANNER -->
+    <!-- 01 / LESSON PLANNER -->
     <section class="feature-detail lesson-detail" id="lesson-planner">
       <div class="wrap feature-grid">
         <div class="feature-copy">
@@ -585,7 +535,7 @@
       </div>
     </section>
 
-    <!-- SMART GRADING -->
+    <!-- 02 / SMART GRADING: RESTORED, NO NEW BUTTONS OR LAYOUT CHANGES -->
     <section class="feature-detail grading-detail" id="smart-grading">
       <div class="wrap">
         <div class="grading-intro">
@@ -596,13 +546,8 @@
         </div>
 
         <div class="grading-layout">
-
           <div class="grading-phone">
             <img src="smart-grading.png" alt="Smart Grading app interface">
-
-            <a class="feature-app-store" href="https://apps.apple.com/us/app/educaitor-pro/id6771396216" target="_blank" rel="noopener noreferrer" aria-label="Download EducAItor pro on the App Store">
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
-            </a>
           </div>
 
           <div class="workflow">
@@ -636,15 +581,14 @@
                 <p>Individual results feed into class analytics, revealing patterns, learning gaps and questions or topics many students struggled with.</p>
               </div>
             </article>
-
-            <p class="privacy-note">Student privacy matters. We do not collect or store personal information about students. Submitting identifiable student information is not permitted on the platform.</p>
           </div>
-
         </div>
+
+        <p class="privacy-note">Student privacy matters. We do not collect or store personal information about students. Submitting identifiable student information is not permitted on the platform.</p>
       </div>
     </section>
 
-    <!-- PEDAGOGICAL SUPPORT -->
+    <!-- 03 / PEDAGOGICAL SUPPORT -->
     <section class="feature-detail support-detail" id="pedagogical-support">
       <div class="wrap feature-grid reverse">
         <div class="feature-visual soft-panel">
@@ -665,7 +609,7 @@
       </div>
     </section>
 
-    <!-- PERSONAL SPACE -->
+    <!-- 04 / PERSONAL SPACE -->
     <section class="feature-detail personal-detail" id="personal-space">
       <div class="wrap personal-wrap">
 
@@ -709,6 +653,7 @@
         </div>
 
         <div class="why-story">
+          <p class="eyebrow">Why We Do What We Do</p>
           <h2>We know the reality of teaching.</h2>
           <p>Planning periods disappear. Sundays become planning days. Fridays become grading nights. Parents call at 9 PM because that is when they are free. Teachers are expected to be therapists, counselors, social workers and curriculum experts, without the time or support to do any of those jobs well. Society, institutions, administrators, parents, and sometimes students can diminish their authority and professional worth.</p>
 

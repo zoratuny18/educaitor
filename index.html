@@ -14,9 +14,199 @@
   <link rel="canonical" href="https://educaitor.pro/">
   <link rel="icon" type="image/png" href="educaitor-mark.png">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- HERO AND LOGO CORRECTIONS -->
+  <style>
+    /* Dashboard: preserve the complete portrait screenshot inside the phone */
+    .hero-visual {
+      height: 440px;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .phone-frame {
+      width: 235px;
+      height: 420px;
+      padding: 7px;
+      border: 7px solid #101c31;
+      border-radius: 37px;
+      background: #101c31;
+      overflow: hidden;
+      position: relative;
+      transform: rotate(5deg);
+      box-shadow: 0 22px 42px #0a2d5c35;
+    }
+
+    .phone-frame:before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 68px;
+      height: 14px;
+      background: #101c31;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .phone-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 24px;
+      background: #fff;
+    }
+
+    /* Metrics with symmetrical laurel wings */
+    .hero-metrics {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      flex-wrap: nowrap;
+    }
+
+    .hero-metrics .metric {
+      position: relative;
+      flex: 0 1 180px;
+      width: 180px;
+      height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .metric-wings {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .metric-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding-top: 4px;
+    }
+
+    .metric-content strong {
+      color: #155fc7;
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.1;
+      letter-spacing: -.5px;
+    }
+
+    .metric-content span {
+      color: #28466f;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Full company logos */
+    .platform-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(22px, 5vw, 75px);
+      min-height: 65px;
+    }
+
+    .platform-logo {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: none;
+    }
+
+    .platform-logo img {
+      display: block;
+      width: auto;
+      height: 36px;
+      max-width: 155px;
+      object-fit: contain;
+    }
+
+    .platform-logo.xedu img {
+      width: 118px;
+      height: 58px;
+      max-width: 150px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 760px) {
+      .hero-visual {
+        height: 365px;
+        min-height: 365px;
+      }
+
+      .phone-frame {
+        width: 190px;
+        height: 350px;
+        border-radius: 31px;
+      }
+
+      .phone-frame img {
+        border-radius: 21px;
+      }
+
+      .hero-metrics {
+        justify-content: flex-start;
+        gap: 3px;
+      }
+
+      .hero-metrics .metric {
+        flex-basis: 155px;
+        width: 155px;
+        height: 84px;
+      }
+
+      .metric-content strong {
+        font-size: 22px;
+      }
+
+      .metric-content span {
+        font-size: 9px;
+      }
+
+      .platform-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 28px;
+      }
+
+      .platform-logo {
+        flex: 0 1 28%;
+      }
+
+      .platform-logo img {
+        max-width: 125px;
+        height: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="#top" aria-label="EducAItor pro home">
@@ -27,6 +217,7 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
       </button>
+
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
         <a href="#tools">What We Do</a>
         <a href="#why">Why EducAItor</a>
@@ -40,47 +231,91 @@
   </header>
 
   <main id="main-content">
+
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-orb orb-one"></div>
       <div class="hero-orb orb-two"></div>
+
       <div class="wrap hero-grid">
         <div class="hero-copy">
+
           <div class="hero-metrics">
             <div class="metric">
-              <span class="laurel-mark" aria-hidden="true">❧</span>
-              <strong>1.8K+</strong>
-              <span>Teachers</span>
+              <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
+                <g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
+                  <path d="M87 83 C61 73 39 48 24 13"/>
+                  <path d="M93 83 C119 73 141 48 156 13"/>
+                </g>
+                <g fill="#d6b76f">
+                  <ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
+                  <ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
+                  <ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
+                  <ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
+                  <ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
+                  <ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
+                  <ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
+                  <ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+                </g>
+              </svg>
+              <div class="metric-content">
+                <strong>1.8K+</strong>
+                <span>Teachers</span>
+              </div>
             </div>
+
             <div class="metric">
-              <span class="laurel-mark" aria-hidden="true">❧</span>
-              <strong>+1M</strong>
-              <span>lesson</span>
+              <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
+                <g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
+                  <path d="M87 83 C61 73 39 48 24 13"/>
+                  <path d="M93 83 C119 73 141 48 156 13"/>
+                </g>
+                <g fill="#d6b76f">
+                  <ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
+                  <ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
+                  <ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
+                  <ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
+                  <ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
+                  <ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
+                  <ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
+                  <ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+                </g>
+              </svg>
+              <div class="metric-content">
+                <strong>+24K</strong>
+                <span>Hours Saved</span>
+              </div>
             </div>
           </div>
+
           <h1>The mobile app made exclusively for teachers.</h1>
 
           <p class="hero-subtitle">Four essential tools for the everyday work of educators. Exclusively for the people who teach. No institutional, parental, nor student services.</p>
+
           <a class="app-store-link" href="https://apps.apple.com/us/app/educaitor-pro/id6771396216" target="_blank" rel="noopener noreferrer" aria-label="Download EducAItor pro on the App Store">
             <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
             <span class="app-store-fallback" aria-hidden="true">Download on the App Store</span>
           </a>
         </div>
+
         <div class="hero-visual" aria-label="EducAItor pro app dashboard">
           <div class="phone-frame">
             <img src="app-dashboard.webp" alt="Actual EducAItor pro dashboard showing Lesson Planner, Smart Grading, Pedagogical Support, analytics and teacher referrals">
           </div>
         </div>
       </div>
+
       <div class="wrap reviews-grid" aria-label="Teacher reviews">
         <article class="review-card">
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>I am beyond grateful to be part of such a supportive and inspiring community. Thank you again for thinking of me and for everything you do for teachers around the world. Sending you all a big hug! ❤️</p>
         </article>
+
         <article class="review-card">
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>39 years old teacher. EducAItor pro has changed my life. Wish I could get all those hours of prep back. I have not had lunch away from my desk in a very long time until now. Leaving on time at the end of the day. No prep for the weekend. This will help with longevity and retention.</p>
         </article>
+
         <article class="review-card review-audio">
           <audio controls preload="none" aria-label="Teacher audio review">
             <source src="teacher-review.m4a" type="audio/mp4">
@@ -93,27 +328,27 @@
     <!-- PARTNERS -->
     <section class="platforms" aria-label="Platforms and partners">
       <div class="wrap platform-row">
+
         <span class="platform-logo">
-          <img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="Amazon Web Services">
-          <span class="platform-fallback">aws</span>
-        </span>
-        <span class="platform-logo">
-          <img src="https://cdn.simpleicons.org/etsy/F1641E" alt="Etsy">
-          <span class="platform-fallback etsy-fallback">Etsy</span>
+          <img src="https://logoapi.sh/amazonaws.com.svg" alt="Amazon Web Services">
         </span>
 
         <span class="platform-logo">
-          <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe">
-          <span class="platform-fallback stripe-fallback">stripe</span>
+          <img src="https://logoapi.sh/etsy.com.svg" alt="Etsy">
         </span>
+
         <span class="platform-logo">
-          <img src="https://cdn.simpleicons.org/posthog/1D4AFF" alt="PostHog">
-          <span class="platform-fallback">PostHog</span>
+          <img src="https://logoapi.sh/stripe.com.svg" alt="Stripe">
+        </span>
+
+        <span class="platform-logo">
+          <img src="https://brand.posthog.com/logo/posthog-logo.svg" alt="PostHog">
         </span>
 
         <span class="platform-logo xedu">
           <img src="https://images.squarespace-cdn.com/content/v1/6411febd0461db7ad9719fb5/a5c6bc85-7a22-4337-bce3-53287354c320/3.png" alt="xEdu, Accelerating Education">
         </span>
+
       </div>
     </section>
 
@@ -124,6 +359,7 @@
           <p class="eyebrow">What We Do</p>
           <h2>Tools built around the work teachers do</h2>
         </div>
+
         <div class="tool-grid">
           <a class="tool-card" href="#lesson-planner">
             <div class="tool-image">
@@ -135,6 +371,7 @@
               <span>Learn more <b>→</b></span>
             </div>
           </a>
+
           <a class="tool-card" href="#smart-grading">
             <div class="tool-image">
               <img src="smart-grading.png" alt="Smart Grading app screen">
@@ -145,6 +382,7 @@
               <span>Learn more <b>→</b></span>
             </div>
           </a>
+
           <a class="tool-card" href="#pedagogical-support">
             <div class="tool-image">
               <img src="educational-support.png" alt="Pedagogical Support app screen">
@@ -155,6 +393,7 @@
               <span>Learn more <b>→</b></span>
             </div>
           </a>
+
           <a class="tool-card" href="#personal-space">
             <div class="tool-image">
               <img src="personal-space.png" alt="Personal Space analytics app screen">
@@ -184,6 +423,7 @@
             <li>Personal library: Save, revisit and reuse whenever you need.</li>
           </ul>
         </div>
+
         <div class="feature-visual soft-panel">
           <img src="lesson-planner.png" alt="Lesson Planner interface from the EducAItor pro app">
         </div>
@@ -199,6 +439,7 @@
             <h2>I was skeptical, then I graded a whole stack from my phone on the ride home</h2>
           </div>
         </div>
+
         <div class="grading-layout">
           <div class="grading-phone">
             <img src="smart-grading.png" alt="Smart Grading app interface">
@@ -212,6 +453,7 @@
                 <p>Take photos directly with your phone camera. No scanner or complicated upload process.</p>
               </div>
             </article>
+
             <article class="workflow-step">
               <span>02</span>
               <div>
@@ -219,6 +461,7 @@
                 <p>Grade each student individually or upload multiple student assessments together. We notify you by email when grading of the entire batch is complete.</p>
               </div>
             </article>
+
             <article class="workflow-step">
               <span>03</span>
               <div>
@@ -226,6 +469,7 @@
                 <p>You will get a comprehensive assessment of the uploaded work and a suggested grade. The final call is always yours. Use what resonates. Done.</p>
               </div>
             </article>
+
             <article class="workflow-step class-picture">
               <div>
                 <h3>See the class picture</h3>
@@ -234,6 +478,7 @@
             </article>
           </div>
         </div>
+
         <p class="privacy-note">Student privacy matters. We do not collect or store personal information about students. Submitting identifiable student information is not permitted on the platform.</p>
       </div>
     </section>
@@ -244,6 +489,7 @@
         <div class="feature-visual soft-panel">
           <img src="educational-support.png" alt="Pedagogical Support app interface">
         </div>
+
         <div class="feature-copy">
           <p class="eyebrow">03 / Pedagogical Support</p>
           <h2>Think through the hard parts of teaching.</h2>
@@ -295,6 +541,7 @@
         <div class="why-story">
           <h2>We know the reality of teaching.</h2>
           <p>Planning periods disappear. Sundays become planning days. Fridays become grading nights. Parents call at 9 PM because that is when they are free. Teachers are expected to be therapists, counselors, social workers and curriculum experts, without the time or support to do any of those jobs well. Society, institutions, administrators, parents, and sometimes students can diminish their authority and professional worth.</p>
+
           <a class="app-store-link why-app-store-link" href="https://apps.apple.com/us/app/educaitor-pro/id6771396216" target="_blank" rel="noopener noreferrer" aria-label="Download EducAItor pro on the App Store">
             <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
             <span class="app-store-fallback" aria-hidden="true">Download on the App Store</span>
@@ -313,28 +560,33 @@
           </div>
           <a class="text-link" href="https://educaitorpro.substack.com/" target="_blank" rel="noopener noreferrer">Explore all articles <span>→</span></a>
         </div>
+
         <div class="article-grid">
           <a class="article-card" href="https://educaitorpro.substack.com/p/grading-is-like-pasta" target="_blank" rel="noopener noreferrer">
             <span class="article-category">ASSESSMENT &amp; GRADING</span>
             <h3>Grading is like pasta: Rethinking student assessments</h3>
             <span class="read-link">Read article ↗</span>
           </a>
+
           <a class="article-card" href="https://educaitorpro.substack.com/p/teacher-burnout-isnt-the-problem" target="_blank" rel="noopener noreferrer">
             <span class="article-category">THE TEACHER EXPERIENCE</span>
             <h3>Burnout isn't the problem. Professional humiliation is</h3>
             <span class="read-link">Read article ↗</span>
           </a>
+
           <a class="article-card" href="https://educaitorpro.substack.com/p/ai-is-coming-for-teachers-own-your" target="_blank" rel="noopener noreferrer">
             <span class="article-category">TEACHING &amp; TECHNOLOGY</span>
             <h3>AI is coming for teachers. Own your tools, or be owned</h3>
             <span class="read-link">Read article ↗</span>
           </a>
+
           <a class="article-card" href="https://educaitorpro.substack.com/p/students-have-no-accountability" target="_blank" rel="noopener noreferrer">
             <span class="article-category">STUDENT ACCOUNTABILITY</span>
             <h3>Students have no accountability. That's how it should be</h3>
             <span class="read-link">Read article ↗</span>
           </a>
         </div>
+
         <div class="substack-footer">
           <span class="substack-wordmark">
             <img src="https://cdn.simpleicons.org/substack/FF6719" alt="">
@@ -354,11 +606,13 @@
             <p class="eyebrow">The Teacher Edit</p>
             <h2>Teachers must dress well.</h2>
           </div>
+
           <div class="shop-description">
             <p>A curated collection of EducAItor pro essentials, made for the chic educator.</p>
             <a class="text-link" href="https://www.etsy.com/shop/EducaiorProMerch?ref=shop_profile&amp;listing_id=4571321442" target="_blank" rel="noopener noreferrer">Shop the collection <span>→</span></a>
           </div>
         </div>
+
         <div class="product-grid">
           <a class="product-card" href="https://www.etsy.com/listing/4570743257/classic-dad-cap" target="_blank" rel="noopener noreferrer">
             <div class="product-photo">
@@ -370,6 +624,7 @@
               <b>Explore on Etsy ↗</b>
             </div>
           </a>
+
           <a class="product-card" href="https://www.etsy.com/shop/EducaiorProMerch?ref=shop_profile&amp;listing_id=4571321442" target="_blank" rel="noopener noreferrer">
             <div class="product-photo">
               <img src="crewneck-product.png" alt="Classic white EducAItor pro crewneck sweatshirt">
@@ -380,6 +635,7 @@
               <b>Explore on Etsy ↗</b>
             </div>
           </a>
+
           <a class="product-card" href="https://www.etsy.com/listing/4571307901/blue-lion-pattern-suitcase-educaitorpro" target="_blank" rel="noopener noreferrer">
             <div class="product-photo">
               <img src="suitcase-product.png" alt="Blue Lion Pattern Suitcase with EducAItor pro logo" loading="lazy">
@@ -390,6 +646,7 @@
               <b>Explore on Etsy ↗</b>
             </div>
           </a>
+
           <a class="product-card" href="https://www.etsy.com/shop/EducaiorProMerch?ref=shop_profile&amp;listing_id=4571321442" target="_blank" rel="noopener noreferrer">
             <div class="product-photo">
               <img src="weekender-product.png" alt="Cherry Illustration Weekender Bag | Retro Fruit Tote" loading="lazy">
@@ -423,6 +680,7 @@
             <circle cx="36" cy="12" r="2.5" fill="#f77737"/>
           </svg>
         </div>
+
         <div>
           <p class="eyebrow">Join the community</p>
           <h2>Follow us on Instagram.</h2>
@@ -441,11 +699,13 @@
           <h2>Celebrating our educators</h2>
           <p>Real teachers. Their work, their stories, their impact.</p>
         </div>
+
         <article class="spotlight-card">
           <div class="spotlight-photo-placeholder" aria-label="Teacher photograph not included in the supplied project files">
             <span>K</span>
             <small>Teacher portrait<br>to be supplied</small>
           </div>
+
           <div class="spotlight-copy">
             <span class="spotlight-kicker">TEACHER SPOTLIGHT</span>
             <h3>Kari</h3>
@@ -466,19 +726,23 @@ In her classroom she is the cheerleader every child remembers, the one who makes
           <h2>Your Questions, Answered</h2>
           <p>What to know before you get started.</p>
         </div>
+
         <div class="faq-list">
           <details>
             <summary>Who can use EducAItor pro?</summary>
             <p>EducAItor pro is exclusively for K–12 teachers. Administrators, parents and students are not platform users.</p>
           </details>
+
           <details>
             <summary>What tools are included?</summary>
             <p>Lesson Planner, Smart Grading, Pedagogical Support and Personal Space. Each tool is designed around a different part of a teacher’s work.</p>
           </details>
+
           <details>
             <summary>Does Smart Grading decide the grade?</summary>
             <p>No. EducAItor pro assists with assessment and analysis. The teacher reviews the results and always makes the final grading decision.</p>
           </details>
+
           <details>
             <summary>Can I assess more than one student at a time?</summary>
             <p>Yes. Teachers can assess students individually or upload multiple student assessments in a batch. Batch completion triggers an email notification.</p>
@@ -493,6 +757,7 @@ In her classroom she is the cheerleader every child remembers, the one who makes
     </section>
 
   </main>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap footer-main">
@@ -502,6 +767,7 @@ In her classroom she is the cheerleader every child remembers, the one who makes
       </a>
 
       <p>The only mobile app exclusively for teachers.</p>
+
       <nav aria-label="Footer navigation">
         <a href="#tools">What We Do</a>
         <a href="#why">Why EducAItor</a>
@@ -509,6 +775,7 @@ In her classroom she is the cheerleader every child remembers, the one who makes
         <a href="#teacher-edit">The Teacher Edit</a>
         <a href="#faq">Q&amp;A</a>
       </nav>
+
       <div class="footer-links">
         <a href="https://app.educaitor.pro" target="_blank" rel="noopener noreferrer">Open the app ↗</a>
         <a href="https://educaitorpro.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
@@ -516,6 +783,7 @@ In her classroom she is the cheerleader every child remembers, the one who makes
         <a href="https://www.instagram.com/educaitor.pro/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
       </div>
     </div>
+
     <div class="wrap footer-bottom">
       <span>© <span id="year">2026</span> EducAItor pro</span>
       <span>Made for teachers. Always.</span>

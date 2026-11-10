@@ -15,9 +15,8 @@
   <link rel="icon" type="image/png" href="educaitor-mark.png">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- HERO AND LOGO CORRECTIONS -->
   <style>
-    /* Dashboard: preserve the complete portrait screenshot inside the phone */
+    /* HERO PHONE: screen proportions match the portrait dashboard image */
     .hero-visual {
       height: 440px;
       min-height: 440px;
@@ -28,9 +27,10 @@
     }
 
     .phone-frame {
-      width: 235px;
+      box-sizing: border-box;
+      width: 202px;
       height: 420px;
-      padding: 7px;
+      padding: 0;
       border: 7px solid #101c31;
       border-radius: 37px;
       background: #101c31;
@@ -44,7 +44,7 @@
       content: "";
       position: absolute;
       z-index: 3;
-      top: 6px;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 68px;
@@ -57,13 +57,13 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
-      border-radius: 24px;
+      border-radius: 27px;
       background: #fff;
     }
 
-    /* Metrics with symmetrical laurel wings */
+    /* METRICS: each number sits inside its own laurel wreath */
     .hero-metrics {
       display: flex;
       align-items: center;
@@ -74,9 +74,9 @@
 
     .hero-metrics .metric {
       position: relative;
-      flex: 0 1 180px;
-      width: 180px;
-      height: 94px;
+      flex: 0 1 190px;
+      width: 190px;
+      height: 116px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,14 +98,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2px;
-      padding-top: 4px;
+      gap: 3px;
+      padding-top: 2px;
     }
 
     .metric-content strong {
       color: #155fc7;
       font-family: var(--serif);
-      font-size: 25px;
+      font-size: 26px;
       line-height: 1.1;
       letter-spacing: -.5px;
     }
@@ -118,7 +118,7 @@
       text-transform: uppercase;
     }
 
-    /* Full company logos */
+    /* PARTNER WORDMARKS */
     .platform-row {
       display: flex;
       align-items: center;
@@ -144,6 +144,45 @@
       object-fit: contain;
     }
 
+    .aws-wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #232f3e;
+      line-height: 1;
+    }
+
+    .aws-wordmark strong {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .aws-wordmark small {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .15px;
+      margin-top: 2px;
+    }
+
+    .aws-smile {
+      width: 43px;
+      height: 10px;
+      margin-top: -1px;
+    }
+
+    .etsy-wordmark {
+      color: #f1641e;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -2.5px;
+      line-height: 1;
+    }
+
     .platform-logo.xedu img {
       width: 118px;
       height: 58px;
@@ -151,20 +190,97 @@
       object-fit: contain;
     }
 
+    /* FEATURE SECTION APP STORE BUTTONS */
+    .feature-app-store {
+      display: inline-block;
+      width: 184px;
+      min-height: 54px;
+      margin-top: 22px;
+    }
+
+    .feature-app-store img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* SMART GRADING: app badge below the image */
+    .grading-phone {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grading-phone img {
+      display: block;
+      height: 420px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 18px #173d6820);
+    }
+
+    .grading-phone .feature-app-store {
+      margin-top: 18px;
+    }
+
+    /* Privacy note sits directly below the class-picture card */
+    .workflow .privacy-note {
+      grid-column: 2;
+      justify-self: start;
+      align-self: start;
+      width: 100%;
+      max-width: 440px;
+      margin: 0;
+      padding: 4px 2px 0;
+      text-align: left;
+      color: #53647e;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* PERSONAL SPACE: referral action is a real button/link */
+    .referral-callout {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      color: inherit;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .referral-callout:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px #153f7220;
+    }
+
+    .referral-callout:focus-visible {
+      outline: 3px solid #1763d4;
+      outline-offset: 3px;
+    }
+
+    .personal-app-store {
+      margin-top: 24px;
+    }
+
     @media (max-width: 760px) {
       .hero-visual {
-        height: 365px;
-        min-height: 365px;
+        height: 385px;
+        min-height: 385px;
       }
 
       .phone-frame {
-        width: 190px;
-        height: 350px;
-        border-radius: 31px;
+        width: 178px;
+        height: 370px;
+        border-radius: 32px;
       }
 
       .phone-frame img {
-        border-radius: 21px;
+        border-radius: 23px;
       }
 
       .hero-metrics {
@@ -175,7 +291,7 @@
       .hero-metrics .metric {
         flex-basis: 155px;
         width: 155px;
-        height: 84px;
+        height: 100px;
       }
 
       .metric-content strong {
@@ -199,6 +315,31 @@
       .platform-logo img {
         max-width: 125px;
         height: 30px;
+      }
+
+      .aws-wordmark strong {
+        font-size: 27px;
+      }
+
+      .etsy-wordmark {
+        font-size: 32px;
+      }
+
+      .grading-phone {
+        height: auto;
+      }
+
+      .grading-phone img {
+        height: 310px;
+      }
+
+      .workflow .privacy-note {
+        grid-column: 1;
+        max-width: none;
+      }
+
+      .feature-app-store {
+        width: 164px;
       }
     }
   </style>
@@ -241,21 +382,24 @@
         <div class="hero-copy">
 
           <div class="hero-metrics">
+
             <div class="metric">
-              <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
+              <svg class="metric-wings" viewBox="0 0 190 116" aria-hidden="true">
                 <g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
-                  <path d="M87 83 C61 73 39 48 24 13"/>
-                  <path d="M93 83 C119 73 141 48 156 13"/>
+                  <path d="M91 103 C49 91 23 60 35 17"/>
+                  <path d="M99 103 C141 91 167 60 155 17"/>
                 </g>
                 <g fill="#d6b76f">
-                  <ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
-                  <ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
-                  <ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
-                  <ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
-                  <ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
-                  <ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
-                  <ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
-                  <ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+                  <ellipse cx="38" cy="31" rx="4.5" ry="9" transform="rotate(-22 38 31)"/>
+                  <ellipse cx="34" cy="49" rx="4.5" ry="9" transform="rotate(-5 34 49)"/>
+                  <ellipse cx="40" cy="66" rx="4.5" ry="9" transform="rotate(18 40 66)"/>
+                  <ellipse cx="52" cy="81" rx="4.5" ry="9" transform="rotate(35 52 81)"/>
+                  <ellipse cx="69" cy="94" rx="4.5" ry="9" transform="rotate(55 69 94)"/>
+                  <ellipse cx="152" cy="31" rx="4.5" ry="9" transform="rotate(22 152 31)"/>
+                  <ellipse cx="156" cy="49" rx="4.5" ry="9" transform="rotate(5 156 49)"/>
+                  <ellipse cx="150" cy="66" rx="4.5" ry="9" transform="rotate(-18 150 66)"/>
+                  <ellipse cx="138" cy="81" rx="4.5" ry="9" transform="rotate(-35 138 81)"/>
+                  <ellipse cx="121" cy="94" rx="4.5" ry="9" transform="rotate(-55 121 94)"/>
                 </g>
               </svg>
               <div class="metric-content">
@@ -265,20 +409,22 @@
             </div>
 
             <div class="metric">
-              <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
+              <svg class="metric-wings" viewBox="0 0 190 116" aria-hidden="true">
                 <g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
-                  <path d="M87 83 C61 73 39 48 24 13"/>
-                  <path d="M93 83 C119 73 141 48 156 13"/>
+                  <path d="M91 103 C49 91 23 60 35 17"/>
+                  <path d="M99 103 C141 91 167 60 155 17"/>
                 </g>
                 <g fill="#d6b76f">
-                  <ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
-                  <ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
-                  <ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
-                  <ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
-                  <ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
-                  <ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
-                  <ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
-                  <ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+                  <ellipse cx="38" cy="31" rx="4.5" ry="9" transform="rotate(-22 38 31)"/>
+                  <ellipse cx="34" cy="49" rx="4.5" ry="9" transform="rotate(-5 34 49)"/>
+                  <ellipse cx="40" cy="66" rx="4.5" ry="9" transform="rotate(18 40 66)"/>
+                  <ellipse cx="52" cy="81" rx="4.5" ry="9" transform="rotate(35 52 81)"/>
+                  <ellipse cx="69" cy="94" rx="4.5" ry="9" transform="rotate(55 69 94)"/>
+                  <ellipse cx="152" cy="31" rx="4.5" ry="9" transform="rotate(22 152 31)"/>
+                  <ellipse cx="156" cy="49" rx="4.5" ry="9" transform="rotate(5 156 49)"/>
+                  <ellipse cx="150" cy="66" rx="4.5" ry="9" transform="rotate(-18 150 66)"/>
+                  <ellipse cx="138" cy="81" rx="4.5" ry="9" transform="rotate(-35 138 81)"/>
+                  <ellipse cx="121" cy="94" rx="4.5" ry="9" transform="rotate(-55 121 94)"/>
                 </g>
               </svg>
               <div class="metric-content">
@@ -286,6 +432,7 @@
                 <span>Hours Saved</span>
               </div>
             </div>
+
           </div>
 
           <h1>The mobile app made exclusively for teachers.</h1>
@@ -329,19 +476,26 @@
     <section class="platforms" aria-label="Platforms and partners">
       <div class="wrap platform-row">
 
-        <span class="platform-logo">
-          <img src="https://logoapi.sh/amazonaws.com.svg" alt="Amazon Web Services">
+        <span class="platform-logo" aria-label="Amazon Web Services">
+          <span class="aws-wordmark">
+            <strong>aws</strong>
+            <svg class="aws-smile" viewBox="0 0 60 13" aria-hidden="true">
+              <path d="M3 3 C20 14 42 14 57 2" fill="none" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+              <path d="M49 2 L57 2 L54 9" fill="none" stroke="#ff9900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <small>amazon web services</small>
+          </span>
         </span>
 
-        <span class="platform-logo">
-          <img src="https://logoapi.sh/etsy.com.svg" alt="Etsy">
+        <span class="platform-logo" aria-label="Etsy">
+          <span class="etsy-wordmark">Etsy</span>
         </span>
 
-        <span class="platform-logo">
+        <span class="platform-logo" aria-label="Stripe">
           <img src="https://logoapi.sh/stripe.com.svg" alt="Stripe">
         </span>
 
-        <span class="platform-logo">
+        <span class="platform-logo" aria-label="PostHog">
           <img src="https://brand.posthog.com/logo/posthog-logo.svg" alt="PostHog">
         </span>
 
@@ -415,6 +569,7 @@
           <p class="eyebrow">01 / Lesson Planner</p>
           <h2>Lesson Planner</h2>
           <p>Create complete lesson plans, classroom activities and differentiated worksheets in seconds. Curriculum alignment and Common Core standards are built in by default, tailored to your location, grade and subject matter.</p>
+
           <ul class="check-list">
             <li>Curriculum aligned</li>
             <li>Printable</li>
@@ -441,8 +596,13 @@
         </div>
 
         <div class="grading-layout">
+
           <div class="grading-phone">
             <img src="smart-grading.png" alt="Smart Grading app interface">
+
+            <a class="feature-app-store" href="https://apps.apple.com/us/app/educaitor-pro/id6771396216" target="_blank" rel="noopener noreferrer" aria-label="Download EducAItor pro on the App Store">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+            </a>
           </div>
 
           <div class="workflow">
@@ -476,10 +636,11 @@
                 <p>Individual results feed into class analytics, revealing patterns, learning gaps and questions or topics many students struggled with.</p>
               </div>
             </article>
-          </div>
-        </div>
 
-        <p class="privacy-note">Student privacy matters. We do not collect or store personal information about students. Submitting identifiable student information is not permitted on the platform.</p>
+            <p class="privacy-note">Student privacy matters. We do not collect or store personal information about students. Submitting identifiable student information is not permitted on the platform.</p>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -494,6 +655,7 @@
           <p class="eyebrow">03 / Pedagogical Support</p>
           <h2>Think through the hard parts of teaching.</h2>
           <p>World-class pedagogical support for the challenges teachers face. The experience feels like a one-on-one conversation with leading experts and the greatest minds in the history of education.</p>
+
           <ul class="check-list">
             <li>Classroom management and student behavior</li>
             <li>Parent conflicts and classroom dynamics</li>
@@ -506,28 +668,36 @@
     <!-- PERSONAL SPACE -->
     <section class="feature-detail personal-detail" id="personal-space">
       <div class="wrap personal-wrap">
+
         <div class="feature-copy">
           <p class="eyebrow">04 / Personal Space</p>
           <h2>Make your work visible. Know your value.</h2>
           <p>Your personal dashboard brings your work and professional impact into view. Track lessons and activities, time saved and its monetary equivalent, and the referrals you bring into the community.</p>
+
           <ul class="check-list">
             <li>Your value and impact</li>
             <li>Your time</li>
             <li>Your cash referral earnings</li>
             <li>Your credits</li>
           </ul>
+
+          <a class="feature-app-store personal-app-store" href="https://apps.apple.com/us/app/educaitor-pro/id6771396216" target="_blank" rel="noopener noreferrer" aria-label="Download EducAItor pro on the App Store">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+          </a>
         </div>
 
         <div class="personal-visual">
           <img src="personal-space.png" alt="Personal Space referral dashboard showing referrals, credits and a personal referral link">
-          <div class="referral-callout">
-            <span class="referral-icon">↗</span>
+
+          <a class="referral-callout" href="affiliate.html" aria-label="Refer a teacher and visit the affiliate program page">
+            <span class="referral-icon" aria-hidden="true">↗</span>
             <div>
               <strong>Refer a Teacher</strong>
               <p>Share your personal link. Follow your referrals and credits in one place.</p>
             </div>
-          </div>
+          </a>
         </div>
+
       </div>
     </section>
 

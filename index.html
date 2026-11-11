@@ -37,13 +37,53 @@
 /* Smart Grading: no App Store button in this section */
 .grading-detail .app-store-link{display:none!important}
 
-/* Why section: quote left, copy and App Store badge right */
+/* Why section: copy and App Store badge left, quote right */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
 .why-lead{display:flex;align-items:center;justify-content:center}
 .why-quote{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-1px;color:#17365d;max-width:470px}
 .why-story{max-width:560px}
 .why-app-store-link{display:inline-flex;margin-top:24px}
 .why-app-store-link img{display:block;width:160px;height:auto}
+
+/* Consistent presentation for the four feature images */
+.lesson-detail .feature-visual,
+.grading-detail .grading-phone,
+.support-detail .feature-visual,
+.personal-detail .personal-visual{
+  width:100%;
+  height:440px;
+  min-height:440px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:22px;
+  background:#f4f6fa;
+  padding:24px;
+  box-sizing:border-box;
+}
+.lesson-detail .feature-visual img,
+.grading-detail .grading-phone img,
+.support-detail .feature-visual img,
+.personal-detail .personal-visual>img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:12px;
+}
+.grading-detail .grading-phone{background:#f4f6fa}
+.personal-detail .personal-visual{position:relative}
+.personal-detail .referral-callout{position:absolute;bottom:36px;left:36px;right:36px}
+
+/* Hero phone: keep the complete dashboard image visible */
+.phone-frame img{object-fit:contain}
+
+/* What We Do: retain the eyebrow without the secondary heading */
+.tools-section .section-heading h2{display:none}
 
 @media(max-width:760px){
 .hero-visual{height:365px;min-height:365px}
@@ -60,6 +100,15 @@
 .why-lead{justify-content:flex-start}
 .why-quote{font-size:34px}
 .why-story{max-width:none}
+.lesson-detail .feature-visual,
+.grading-detail .grading-phone,
+.support-detail .feature-visual,
+.personal-detail .personal-visual{
+  height:340px;
+  min-height:340px;
+  padding:16px;
+}
+.personal-detail .referral-callout{bottom:24px;left:24px;right:24px}
 }
 </style>
 </head>
@@ -100,62 +149,62 @@
 
 <div class="metric">
 <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
-<path d="M87 83 C61 73 39 48 24 13"/>
-<path d="M93 83 C119 73 141 48 156 13"/>
+<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
+<path d="M89 82 C66 72 43 48 25 15"/>
+<path d="M91 82 C114 72 137 48 155 15"/>
 </g>
 <g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
-<ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
-<ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
-<ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
-<ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
-<ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
+<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
+<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
+<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
+<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
+<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
+<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
+<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
 </g>
 </svg>
-<div class="metric-content"><strong>1.8K+</strong><span>Teachers</span></div>
+<div class="metric-content"><strong>1.8K</strong><span>Educators</span></div>
 </div>
 
 <div class="metric">
 <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
-<path d="M87 83 C61 73 39 48 24 13"/>
-<path d="M93 83 C119 73 141 48 156 13"/>
+<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
+<path d="M89 82 C66 72 43 48 25 15"/>
+<path d="M91 82 C114 72 137 48 155 15"/>
 </g>
 <g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
-<ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
-<ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
-<ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
-<ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
-<ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
+<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
+<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
+<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
+<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
+<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
+<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
+<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
 </g>
 </svg>
-<div class="metric-content"><strong>+24K</strong><span>Hours Saved</span></div>
+<div class="metric-content"><strong>+25K</strong><span>Hours Saved</span></div>
 </div>
 
 <div class="metric">
 <svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="2" stroke-linecap="round">
-<path d="M87 83 C61 73 39 48 24 13"/>
-<path d="M93 83 C119 73 141 48 156 13"/>
+<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
+<path d="M89 82 C66 72 43 48 25 15"/>
+<path d="M91 82 C114 72 137 48 155 15"/>
 </g>
 <g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="4" ry="9" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="44" rx="4" ry="9" transform="rotate(-48 46 44)"/>
-<ellipse cx="60" cy="57" rx="4" ry="9" transform="rotate(-56 60 57)"/>
-<ellipse cx="75" cy="70" rx="4" ry="9" transform="rotate(-68 75 70)"/>
-<ellipse cx="146" cy="29" rx="4" ry="9" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="44" rx="4" ry="9" transform="rotate(48 134 44)"/>
-<ellipse cx="120" cy="57" rx="4" ry="9" transform="rotate(56 120 57)"/>
-<ellipse cx="105" cy="70" rx="4" ry="9" transform="rotate(68 105 70)"/>
+<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
+<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
+<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
+<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
+<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
+<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
+<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
+<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
 </g>
 </svg>
-<div class="metric-content"><strong>+67K</strong><span>Lessons</span></div>
+<div class="metric-content"><strong>+69K</strong><span>Lessons</span></div>
 </div>
 
 </div>
@@ -169,7 +218,7 @@
 </div>
 
 <div class="hero-visual" aria-label="EducAItor pro app dashboard">
-<div class="phone-frame"><img src="app-dashboard.webp" alt="Actual EducAItor pro dashboard showing Lesson Planner, Smart Grading, Pedagogical Support, analytics and teacher referrals"></div>
+<div class="phone-frame"><img src="app-dashboard1.webp" alt="Actual EducAItor pro dashboard showing Lesson Planner, Smart Grading, Pedagogical Support, analytics and teacher referrals"></div>
 </div>
 </div>
 
@@ -194,8 +243,8 @@ Your browser does not support audio playback.
 <!-- PARTNERS -->
 <section class="platforms" aria-label="Platforms and partners">
 <div class="wrap platform-row">
-<span class="platform-logo"><img src="https://logoapi.sh/amazonaws.com.svg" alt="Amazon Web Services"></span>
-<span class="platform-logo"><img src="https://logoapi.sh/etsy.com.svg" alt="Etsy"></span>
+<span class="platform-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services"></span>
+<span class="platform-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Etsy_logo.svg" alt="Etsy"></span>
 <span class="platform-logo"><img src="https://logoapi.sh/stripe.com.svg" alt="Stripe"></span>
 <span class="platform-logo"><img src="https://brand.posthog.com/logo/posthog-logo.svg" alt="PostHog"></span>
 <span class="platform-logo xedu"><img src="https://images.squarespace-cdn.com/content/v1/6411febd0461db7ad9719fb5/a5c6bc85-7a22-4337-bce3-53287354c320/3.png" alt="xEdu, Accelerating Education"></span>
@@ -207,7 +256,6 @@ Your browser does not support audio playback.
 <div class="wrap">
 <div class="section-heading centered">
 <p class="eyebrow">What We Do</p>
-<h2>Tools built around the work teachers do</h2>
 </div>
 <div class="tool-grid">
 <a class="tool-card" href="#lesson-planner">
@@ -331,10 +379,6 @@ Your browser does not support audio playback.
 </div>
 
 <div class="why-grid">
-<div class="why-lead why-quote-only">
-<div class="why-quote">“The job keeps expanding. The support does not.”</div>
-</div>
-
 <div class="why-story">
 <h2>We know the reality of teaching.</h2>
 <p>Planning periods disappear. Sundays become planning days. Fridays become grading nights. Parents call at 9 PM because that is when they are free. Teachers are expected to be therapists, counselors, social workers and curriculum experts, without the time or support to do any of those jobs well. Society, institutions, administrators, parents, and sometimes students can diminish their authority and professional worth.</p>
@@ -348,6 +392,10 @@ aria-label="Download EducAItor pro on the App Store">
 alt="Download on the App Store">
 <span class="app-store-fallback" aria-hidden="true">Download on the App Store</span>
 </a>
+</div>
+
+<div class="why-lead why-quote-only">
+<div class="why-quote">“The job keeps expanding. The support does not.”</div>
 </div>
 </div>
 </div>
@@ -405,9 +453,9 @@ alt="Download on the App Store">
 <div class="product-photo"><img src="suitcase-product.png" alt="Blue Lion Pattern Suitcase with EducAItor pro logo" loading="lazy"></div>
 <div class="product-info"><span>03 / TRAVEL</span><h3>Blue Lion Pattern Suitcase | EducAItor.pro logo Luggage</h3><b>Explore on Etsy ↗</b></div>
 </a>
-<a class="product-card" href="https://www.etsy.com/shop/EducaiorProMerch?ref=shop_profile&amp;listing_id=4571321442" target="_blank" rel="noopener noreferrer">
-<div class="product-photo"><img src="weekender-product.png" alt="Cherry Illustration Weekender Bag | Retro Fruit Tote" loading="lazy"></div>
-<div class="product-info"><span>04 / TRAVEL</span><h3>Cherry Illustration Weekender Bag | Retro Fruit Tote</h3><b>Explore on Etsy ↗</b></div>
+<a class="product-card" href="https://www.etsy.com/listing/4571302977/blue-tie-dye-sunburst-beanie?sr_prefetch=1&amp;pf_from=shop_home&amp;ref=shop_home_active_7&amp;logging_key=aab4b3c561f5f6e74c0da73179e81f91f88726a9%3A4571302977" target="_blank" rel="noopener noreferrer">
+<div class="product-photo"><img src="weekender-product.png" alt="Blue tie dye sunburst beanie" loading="lazy"></div>
+<div class="product-info"><span>04 / ACCESSORIES</span><h3>Beanie</h3><b>Explore on Etsy ↗</b></div>
 </a>
 </div>
 </div>

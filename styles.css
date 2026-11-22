@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 :root{--navy:#071b49;--blue:#1763d4;--blue2:#2d8de8;--pale:#edf5ff;--pale2:#e2efff;--line:#d7e5f7;--ink:#10224a;--muted:#566782;--gold:#c7a45a;--white:#fff;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--max:1380px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;color:var(--ink);font-family:var(--sans);background:#fff;font-size:16px;line-height:1.55}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
@@ -94,3 +95,31 @@
   .hero-metrics .metric>span:last-child{font-size:10px}
   .why-lead.why-quote-only{min-height:0}
   .why-story h2{font-size:36px}
+  .shop-heading h2{margin-bottom:12px}
+  .shop-description p{font-size:15px}
+}
+.platform-logo.xedu img{width:118px;height:58px;max-width:150px;object-fit:contain}
+
+
+/* HERO REFINEMENT: clean upright phone and restrained metrics */
+.hero-visual{height:470px!important;min-height:470px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.phone-frame{width:252px!important;height:458px!important;padding:5px!important;border:1px solid #d5e2f3!important;border-radius:36px!important;background:#fff!important;transform:none!important;box-shadow:0 24px 55px rgba(19,54,102,.18)!important;overflow:hidden!important}
+.phone-frame:before{top:5px!important;width:66px!important;height:13px!important;background:#0b1730!important;border-radius:0 0 10px 10px!important}
+.phone-frame img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;border-radius:30px!important;background:#fff!important}
+.hero-metrics{display:flex!important;align-items:stretch!important;gap:0!important;margin:0 0 22px!important;width:100%!important;max-width:520px!important}
+.hero-metrics .metric{position:relative!important;flex:1 1 0!important;min-width:0!important;min-height:72px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important}
+.hero-metrics .metric+.metric{border-left:1px solid rgba(197,161,92,.38)!important}
+.metric-content{position:relative!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;padding:0 10px!important}
+.metric-content:after{content:""!important;display:block!important;width:25px!important;height:2px!important;border-radius:2px!important;background:#c7a45a!important;opacity:.85!important}
+.metric-content strong{color:#155fc7!important;font-family:var(--serif)!important;font-size:27px!important;line-height:1!important;letter-spacing:-.5px!important}
+.metric-content span{color:#28466f!important;font-size:9px!important;font-weight:700!important;letter-spacing:1.05px!important;text-transform:uppercase!important}
+@media(max-width:760px){
+ .hero-visual{height:390px!important;min-height:390px!important}
+ .phone-frame{width:205px!important;height:370px!important;border-radius:31px!important;padding:4px!important}
+ .phone-frame img{border-radius:26px!important}
+ .hero-metrics{justify-content:flex-start!important;gap:0!important;max-width:100%!important}
+ .hero-metrics .metric{flex:1 1 0!important;width:auto!important;min-height:66px!important;height:auto!important}
+ .metric-content{padding:0 5px!important;gap:4px!important}
+ .metric-content strong{font-size:21px!important}
+ .metric-content span{font-size:8px!important;letter-spacing:.45px!important}
+}

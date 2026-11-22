@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
-/* HERO: phone frame dimensions and layout */
+/* HERO PHONE: LOCKED TO THE APPROVED VERSION */
 .hero-visual {
     height: 590px;
     min-height: 590px;
@@ -115,13 +115,14 @@
     text-transform: uppercase;
 }
 
+/* APPROVED LAUREL IMAGE */
 .laurel-pair {
     position: absolute;
     z-index: 1;
     left: 50%;
     top: 50%;
     width: 132px;
-    height: 60px;
+    height: 74px;
     transform: translate(-50%,-57%);
     pointer-events: none;
 }
@@ -245,7 +246,7 @@
 
     .laurel-pair {
         width: 108px;
-        height: 52px;
+        height: 62px;
         transform: translate(-50%,-57%);
     }
 
@@ -279,6 +280,23 @@
 
     .why-story {
         max-width: none;
+    }
+}
+
+@media (max-width:390px) {
+    .hero-visual {
+        height: 455px;
+        min-height: 455px;
+    }
+
+    .phone-frame {
+        width: 202px;
+        height: 434px;
+    }
+
+    .laurel-pair {
+        width: 98px;
+        height: 57px;
     }
 }
 </style>
@@ -321,6 +339,7 @@
 <div class="hero-copy">
 
 <div class="hero-metrics">
+
 <div class="metric">
 <div class="metric-content">
 <span class="laurel-pair" aria-hidden="true"><img src="laurel-pair.png" alt=""></span>
@@ -332,7 +351,7 @@
 <div class="metric">
 <div class="metric-content">
 <span class="laurel-pair" aria-hidden="true"><img src="laurel-pair.png" alt=""></span>
-<strong>29K</strong>
+<strong>+25K</strong>
 <span>Hours Saved</span>
 </div>
 </div>
@@ -340,10 +359,11 @@
 <div class="metric">
 <div class="metric-content">
 <span class="laurel-pair" aria-hidden="true"><img src="laurel-pair.png" alt=""></span>
-<strong>69K</strong>
+<strong>+69K</strong>
 <span>Lessons</span>
 </div>
 </div>
+
 </div>
 
 <h1>The mobile app made exclusively for teachers.</h1>
@@ -362,6 +382,7 @@
 <img src="app-dashboard1.webp" alt="Actual EducAItor pro dashboard showing Lesson Planner, Smart Grading, Pedagogical Support, analytics and teacher referrals">
 </div>
 </div>
+
 </div>
 
 <div class="wrap reviews-grid" aria-label="Teacher reviews">
@@ -800,6 +821,7 @@ In her classroom she is the cheerleader every child remembers, the one who makes
 </div>
 
 <div class="faq-list">
+
 <details>
 <summary>Who can use EducAItor pro?</summary>
 <p>EducAItor pro is exclusively for K–12 teachers. Administrators, parents and students are not platform users.</p>
@@ -824,8 +846,8 @@ In her classroom she is the cheerleader every child remembers, the one who makes
 <summary>Where can I download the app?</summary>
 <p>Download EducAItor pro from the Apple App Store.</p>
 </details>
-</div>
 
+</div>
 </div>
 </section>
 

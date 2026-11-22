@@ -16,99 +16,53 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
-.hero-visual{height:440px;min-height:440px;display:flex;align-items:center;justify-content:center;position:relative}
-.phone-frame{width:235px;height:420px;padding:7px;border:7px solid #101c31;border-radius:37px;background:#101c31;overflow:hidden;position:relative;transform:rotate(5deg);box-shadow:0 22px 42px #0a2d5c35}
-.phone-frame:before{content:"";position:absolute;z-index:3;top:6px;left:50%;transform:translateX(-50%);width:68px;height:14px;background:#101c31;border-radius:0 0 10px 10px}
-.phone-frame img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:24px;background:#fff}
-
-/* Three hero metrics */
-.hero-metrics{display:flex;align-items:center;gap:0;margin:0 0 22px;width:100%;max-width:455px}
-.hero-metrics .metric{position:relative;flex:1 1 0;min-width:0;height:94px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
-.metric-wings{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.metric-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding-top:4px}
-.metric-content strong{color:#155fc7;font-family:var(--serif);font-size:23px;line-height:1.1;letter-spacing:-.5px}
-.metric-content span{color:#28466f;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
-
+/* HERO: matched laurel artwork and correctly proportioned app screen */
+.hero-visual{height:590px;min-height:590px;display:flex;align-items:center;justify-content:center;position:relative}
+.phone-frame{box-sizing:border-box;position:relative;z-index:2;width:266px;height:570px;padding:0;border:8px solid #111b2d;border-radius:43px;background:#111b2d;overflow:hidden;transform:none;box-shadow:0 25px 58px rgba(19,54,102,.22)}
+.phone-frame img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border:0;border-radius:32px;background:#fff}
+.phone-frame:before{content:none}
+.hero-metrics{display:flex;align-items:stretch;gap:0;margin:0 0 22px;width:100%;max-width:520px}
+.hero-metrics .metric{position:relative;flex:1 1 0;min-width:0;min-height:88px;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.hero-metrics .metric+.metric{border-left:1px solid rgba(197,161,92,.30)}
+.metric-content{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0 10px}
+.metric-content:after{content:"";display:block;width:25px;height:2px;border-radius:2px;background:#c7a45a;opacity:.75}
+.metric-content strong{position:relative;z-index:2;color:#155fc7;font-family:var(--serif);font-size:27px;line-height:1;letter-spacing:-.5px}
+.metric-content>span:not(.laurel-pair){position:relative;z-index:2;color:#28466f;font-size:9px;font-weight:700;letter-spacing:1.05px;text-transform:uppercase}
+.laurel-pair{position:absolute;z-index:1;left:50%;top:50%;width:132px;height:74px;transform:translate(-50%,-57%);pointer-events:none}
+.laurel-pair svg{display:block;width:100%;height:100%;overflow:visible}
+@media(max-width:760px){
+ .hero-visual{height:485px;min-height:485px;margin-top:5px}
+ .phone-frame{width:218px;height:468px;border-width:7px;border-radius:37px}
+ .phone-frame img{border-radius:28px}
+ .hero-metrics{justify-content:flex-start;gap:0;max-width:100%}
+ .hero-metrics .metric{flex:1 1 0;width:auto;min-height:78px}
+ .metric-content{padding:0 5px;gap:4px}
+ .metric-content strong{font-size:21px}
+ .metric-content>span:not(.laurel-pair){font-size:8px;letter-spacing:.45px}
+ .laurel-pair{width:108px;height:62px;transform:translate(-50%,-57%)}
+}
+@media(max-width:390px){
+ .hero-visual{height:455px;min-height:455px}
+ .phone-frame{width:202px;height:434px}
+ .laurel-pair{width:98px;height:57px}
+}
 .platform-row{display:flex;align-items:center;justify-content:space-between;gap:clamp(22px,5vw,75px);min-height:65px}
 .platform-logo{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;filter:none}
 .platform-logo img{display:block;width:auto;height:36px;max-width:155px;object-fit:contain}
 .platform-logo.xedu img{width:118px;height:58px;max-width:150px;object-fit:contain}
-
-/* Smart Grading: no App Store button in this section */
 .grading-detail .app-store-link{display:none!important}
-
-/* Why section: copy and App Store badge left, quote right */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
 .why-lead{display:flex;align-items:center;justify-content:center}
 .why-quote{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-1px;color:#17365d;max-width:470px}
 .why-story{max-width:560px}
-.why-app-store-link{display:inline-flex;margin-top:24px}
-.why-app-store-link img{display:block;width:160px;height:auto}
-
-/* Consistent presentation for the four feature images */
-.lesson-detail .feature-visual,
-.grading-detail .grading-phone,
-.support-detail .feature-visual,
-.personal-detail .personal-visual{
-  width:100%;
-  height:440px;
-  min-height:440px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  border-radius:22px;
-  background:#f4f6fa;
-  padding:24px;
-  box-sizing:border-box;
-}
-.lesson-detail .feature-visual img,
-.grading-detail .grading-phone img,
-.support-detail .feature-visual img,
-.personal-detail .personal-visual>img{
-  display:block;
-  width:100%;
-  height:100%;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  object-position:center;
-  border-radius:12px;
-}
-.grading-detail .grading-phone{background:#f4f6fa}
-.personal-detail .personal-visual{position:relative}
-.personal-detail .referral-callout{position:absolute;bottom:36px;left:36px;right:36px}
-
-/* Hero phone: keep the complete dashboard image visible */
-.phone-frame img{object-fit:contain}
-
-/* What We Do: retain the eyebrow without the secondary heading */
-.tools-section .section-heading h2{display:none}
-
 @media(max-width:760px){
-.hero-visual{height:365px;min-height:365px}
-.phone-frame{width:190px;height:350px;border-radius:31px}
-.phone-frame img{border-radius:21px}
-.hero-metrics{justify-content:flex-start;gap:0;max-width:100%}
-.hero-metrics .metric{flex:1 1 0;width:auto;height:80px}
-.metric-content strong{font-size:19px}
-.metric-content span{font-size:8px;letter-spacing:.4px}
-.platform-row{flex-wrap:wrap;justify-content:center;gap:20px 28px}
-.platform-logo{flex:0 1 28%}
-.platform-logo img{max-width:125px;height:30px}
-.why-grid{grid-template-columns:1fr;gap:28px}
-.why-lead{justify-content:flex-start}
-.why-quote{font-size:34px}
-.why-story{max-width:none}
-.lesson-detail .feature-visual,
-.grading-detail .grading-phone,
-.support-detail .feature-visual,
-.personal-detail .personal-visual{
-  height:340px;
-  min-height:340px;
-  padding:16px;
-}
-.personal-detail .referral-callout{bottom:24px;left:24px;right:24px}
+ .platform-row{flex-wrap:wrap;justify-content:center;gap:20px 28px}
+ .platform-logo{flex:0 1 28%}
+ .platform-logo img{max-width:125px;height:30px}
+ .why-grid{grid-template-columns:1fr;gap:28px}
+ .why-lead{justify-content:flex-start}
+ .why-quote{font-size:34px}
+ .why-story{max-width:none}
 }
 </style>
 </head>
@@ -146,67 +100,54 @@
 <div class="hero-copy">
 
 <div class="hero-metrics">
-
-<div class="metric">
-<svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
-<path d="M89 82 C66 72 43 48 25 15"/>
-<path d="M91 82 C114 72 137 48 155 15"/>
-</g>
-<g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
-<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
-<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
-<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
-<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
-<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
-</g>
-</svg>
-<div class="metric-content"><strong>1.8K</strong><span>Educators</span></div>
-</div>
-
-<div class="metric">
-<svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
-<path d="M89 82 C66 72 43 48 25 15"/>
-<path d="M91 82 C114 72 137 48 155 15"/>
-</g>
-<g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
-<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
-<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
-<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
-<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
-<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
-</g>
-</svg>
-<div class="metric-content"><strong>+25K</strong><span>Hours Saved</span></div>
-</div>
-
-<div class="metric">
-<svg class="metric-wings" viewBox="0 0 180 94" aria-hidden="true">
-<g fill="none" stroke="#c5a15c" stroke-width="1.8" stroke-linecap="round">
-<path d="M89 82 C66 72 43 48 25 15"/>
-<path d="M91 82 C114 72 137 48 155 15"/>
-</g>
-<g fill="#d6b76f">
-<ellipse cx="34" cy="29" rx="3.5" ry="8" transform="rotate(-42 34 29)"/>
-<ellipse cx="46" cy="43" rx="3.5" ry="8" transform="rotate(-48 46 43)"/>
-<ellipse cx="59" cy="56" rx="3.5" ry="8" transform="rotate(-55 59 56)"/>
-<ellipse cx="73" cy="68" rx="3.5" ry="8" transform="rotate(-65 73 68)"/>
-<ellipse cx="146" cy="29" rx="3.5" ry="8" transform="rotate(42 146 29)"/>
-<ellipse cx="134" cy="43" rx="3.5" ry="8" transform="rotate(48 134 43)"/>
-<ellipse cx="121" cy="56" rx="3.5" ry="8" transform="rotate(55 121 56)"/>
-<ellipse cx="107" cy="68" rx="3.5" ry="8" transform="rotate(65 107 68)"/>
-</g>
-</svg>
-<div class="metric-content"><strong>+69K</strong><span>Lessons</span></div>
-</div>
-
+<div class="metric"><div class="metric-content"><span class="laurel-pair" aria-hidden="true"><svg viewBox="0 0 220 112" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="leafTone1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55585d"/><stop offset=".48" stop-color="#24272b"/><stop offset="1" stop-color="#111316"/></linearGradient>
+ <filter id="leafShadow" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dy="3"/><feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g fill="none" stroke="#34373b" stroke-width="3.2" stroke-linecap="round"><path d="M104 94 C119 101 130 92 120 82 C82 88 50 69 35 49 C25 33 24 20 31 9"/><path d="M116 94 C101 101 90 92 100 82 C138 88 170 69 185 49 C195 33 196 20 189 9"/></g>
+<g fill="url(#leafTone1)" stroke="#202327" stroke-width="1.2" filter="url(#leafShadow)">
+ <path d="M31 10 C14 17 12 34 28 48 C42 36 43 20 31 10Z"/>
+ <path d="M27 34 C8 39 7 57 26 69 C40 57 40 43 27 34Z"/>
+ <path d="M38 56 C20 62 23 80 45 87 C57 73 53 61 38 56Z"/>
+ <path d="M58 75 C43 83 50 99 73 101 C82 85 74 76 58 75Z"/>
+ <path d="M189 10 C206 17 208 34 192 48 C178 36 177 20 189 10Z"/>
+ <path d="M193 34 C212 39 213 57 194 69 C180 57 180 43 193 34Z"/>
+ <path d="M182 56 C200 62 197 80 175 87 C163 73 167 61 182 56Z"/>
+ <path d="M162 75 C177 83 170 99 147 101 C138 85 146 76 162 75Z"/>
+</g></svg></span><strong>1.8K</strong><span>Educators</span></div></div>
+<div class="metric"><div class="metric-content"><span class="laurel-pair" aria-hidden="true"><svg viewBox="0 0 220 112" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="leafTone2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55585d"/><stop offset=".48" stop-color="#24272b"/><stop offset="1" stop-color="#111316"/></linearGradient>
+ <filter id="leafShadow" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dy="3"/><feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g fill="none" stroke="#34373b" stroke-width="3.2" stroke-linecap="round"><path d="M104 94 C119 101 130 92 120 82 C82 88 50 69 35 49 C25 33 24 20 31 9"/><path d="M116 94 C101 101 90 92 100 82 C138 88 170 69 185 49 C195 33 196 20 189 9"/></g>
+<g fill="url(#leafTone2)" stroke="#202327" stroke-width="1.2" filter="url(#leafShadow)">
+ <path d="M31 10 C14 17 12 34 28 48 C42 36 43 20 31 10Z"/>
+ <path d="M27 34 C8 39 7 57 26 69 C40 57 40 43 27 34Z"/>
+ <path d="M38 56 C20 62 23 80 45 87 C57 73 53 61 38 56Z"/>
+ <path d="M58 75 C43 83 50 99 73 101 C82 85 74 76 58 75Z"/>
+ <path d="M189 10 C206 17 208 34 192 48 C178 36 177 20 189 10Z"/>
+ <path d="M193 34 C212 39 213 57 194 69 C180 57 180 43 193 34Z"/>
+ <path d="M182 56 C200 62 197 80 175 87 C163 73 167 61 182 56Z"/>
+ <path d="M162 75 C177 83 170 99 147 101 C138 85 146 76 162 75Z"/>
+</g></svg></span><strong>+25K</strong><span>Hours Saved</span></div></div>
+<div class="metric"><div class="metric-content"><span class="laurel-pair" aria-hidden="true"><svg viewBox="0 0 220 112" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="leafTone3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55585d"/><stop offset=".48" stop-color="#24272b"/><stop offset="1" stop-color="#111316"/></linearGradient>
+ <filter id="leafShadow" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dy="3"/><feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g fill="none" stroke="#34373b" stroke-width="3.2" stroke-linecap="round"><path d="M104 94 C119 101 130 92 120 82 C82 88 50 69 35 49 C25 33 24 20 31 9"/><path d="M116 94 C101 101 90 92 100 82 C138 88 170 69 185 49 C195 33 196 20 189 9"/></g>
+<g fill="url(#leafTone3)" stroke="#202327" stroke-width="1.2" filter="url(#leafShadow)">
+ <path d="M31 10 C14 17 12 34 28 48 C42 36 43 20 31 10Z"/>
+ <path d="M27 34 C8 39 7 57 26 69 C40 57 40 43 27 34Z"/>
+ <path d="M38 56 C20 62 23 80 45 87 C57 73 53 61 38 56Z"/>
+ <path d="M58 75 C43 83 50 99 73 101 C82 85 74 76 58 75Z"/>
+ <path d="M189 10 C206 17 208 34 192 48 C178 36 177 20 189 10Z"/>
+ <path d="M193 34 C212 39 213 57 194 69 C180 57 180 43 193 34Z"/>
+ <path d="M182 56 C200 62 197 80 175 87 C163 73 167 61 182 56Z"/>
+ <path d="M162 75 C177 83 170 99 147 101 C138 85 146 76 162 75Z"/>
+</g></svg></span><strong>+69K</strong><span>Lessons</span></div></div>
 </div>
 
 <h1>The mobile app made exclusively for teachers.</h1>
@@ -243,8 +184,8 @@ Your browser does not support audio playback.
 <!-- PARTNERS -->
 <section class="platforms" aria-label="Platforms and partners">
 <div class="wrap platform-row">
-<span class="platform-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services"></span>
-<span class="platform-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Etsy_logo.svg" alt="Etsy"></span>
+<span class="platform-logo"><img src="https://logoapi.sh/amazonaws.com.svg" alt="Amazon Web Services"></span>
+<span class="platform-logo"><img src="https://logoapi.sh/etsy.com.svg" alt="Etsy"></span>
 <span class="platform-logo"><img src="https://logoapi.sh/stripe.com.svg" alt="Stripe"></span>
 <span class="platform-logo"><img src="https://brand.posthog.com/logo/posthog-logo.svg" alt="PostHog"></span>
 <span class="platform-logo xedu"><img src="https://images.squarespace-cdn.com/content/v1/6411febd0461db7ad9719fb5/a5c6bc85-7a22-4337-bce3-53287354c320/3.png" alt="xEdu, Accelerating Education"></span>
@@ -256,6 +197,7 @@ Your browser does not support audio playback.
 <div class="wrap">
 <div class="section-heading centered">
 <p class="eyebrow">What We Do</p>
+<h2>Tools built around the work teachers do</h2>
 </div>
 <div class="tool-grid">
 <a class="tool-card" href="#lesson-planner">
@@ -379,6 +321,10 @@ Your browser does not support audio playback.
 </div>
 
 <div class="why-grid">
+<div class="why-lead why-quote-only">
+<div class="why-quote">“The job keeps expanding. The support does not.”</div>
+</div>
+
 <div class="why-story">
 <h2>We know the reality of teaching.</h2>
 <p>Planning periods disappear. Sundays become planning days. Fridays become grading nights. Parents call at 9 PM because that is when they are free. Teachers are expected to be therapists, counselors, social workers and curriculum experts, without the time or support to do any of those jobs well. Society, institutions, administrators, parents, and sometimes students can diminish their authority and professional worth.</p>
@@ -392,10 +338,6 @@ aria-label="Download EducAItor pro on the App Store">
 alt="Download on the App Store">
 <span class="app-store-fallback" aria-hidden="true">Download on the App Store</span>
 </a>
-</div>
-
-<div class="why-lead why-quote-only">
-<div class="why-quote">“The job keeps expanding. The support does not.”</div>
 </div>
 </div>
 </div>
@@ -453,9 +395,9 @@ alt="Download on the App Store">
 <div class="product-photo"><img src="suitcase-product.png" alt="Blue Lion Pattern Suitcase with EducAItor pro logo" loading="lazy"></div>
 <div class="product-info"><span>03 / TRAVEL</span><h3>Blue Lion Pattern Suitcase | EducAItor.pro logo Luggage</h3><b>Explore on Etsy ↗</b></div>
 </a>
-<a class="product-card" href="https://www.etsy.com/listing/4571302977/blue-tie-dye-sunburst-beanie?sr_prefetch=1&amp;pf_from=shop_home&amp;ref=shop_home_active_7&amp;logging_key=aab4b3c561f5f6e74c0da73179e81f91f88726a9%3A4571302977" target="_blank" rel="noopener noreferrer">
-<div class="product-photo"><img src="weekender-product.png" alt="Blue tie dye sunburst beanie" loading="lazy"></div>
-<div class="product-info"><span>04 / ACCESSORIES</span><h3>Beanie</h3><b>Explore on Etsy ↗</b></div>
+<a class="product-card" href="https://www.etsy.com/shop/EducaiorProMerch?ref=shop_profile&amp;listing_id=4571321442" target="_blank" rel="noopener noreferrer">
+<div class="product-photo"><img src="weekender-product.png" alt="Cherry Illustration Weekender Bag | Retro Fruit Tote" loading="lazy"></div>
+<div class="product-info"><span>04 / TRAVEL</span><h3>Cherry Illustration Weekender Bag | Retro Fruit Tote</h3><b>Explore on Etsy ↗</b></div>
 </a>
 </div>
 </div>

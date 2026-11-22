@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
-/* HERO PHONE: LOCKED TO THE APPROVED VERSION */
+/* HERO PHONE: REALISTIC PHONE FRAME WITH FITTED HOME SCREEN */
 .hero-visual {
     height: 590px;
     min-height: 590px;
@@ -31,15 +32,18 @@
     z-index: 2;
     width: 266px;
     height: 570px;
-    padding: 0;
+    padding: 7px;
     border: 8px solid #111b2d;
     border-radius: 43px;
     background: #111b2d;
     overflow: hidden;
     transform: none;
-    box-shadow: 0 25px 58px rgba(19,54,102,.22);
+    box-shadow:
+        0 25px 58px rgba(19,54,102,.22),
+        inset 0 0 0 1px rgba(255,255,255,.12);
 }
 
+/* Screen */
 .phone-frame img {
     display: block;
     width: 100%;
@@ -47,12 +51,24 @@
     object-fit: contain;
     object-position: center;
     border: 0;
-    border-radius: 32px;
+    border-radius: 29px;
     background: #fff;
 }
 
+/* Top speaker / Dynamic Island detail */
 .phone-frame:before {
-    content: none;
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 86px;
+    height: 19px;
+    border-radius: 0 0 13px 13px;
+    background: #111b2d;
+    pointer-events: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12);
 }
 
 /* HERO METRICS */
@@ -212,10 +228,18 @@
         height: 468px;
         border-width: 7px;
         border-radius: 37px;
+        padding: 6px;
     }
 
     .phone-frame img {
-        border-radius: 28px;
+        border-radius: 25px;
+    }
+
+    .phone-frame:before {
+        top: 6px;
+        width: 72px;
+        height: 16px;
+        border-radius: 0 0 11px 11px;
     }
 
     .hero-metrics {
@@ -351,7 +375,7 @@
 <div class="metric">
 <div class="metric-content">
 <span class="laurel-pair" aria-hidden="true"><img src="laurel-pair.png" alt=""></span>
-<strong>+25K</strong>
+<strong>25K</strong>
 <span>Hours Saved</span>
 </div>
 </div>
@@ -359,7 +383,7 @@
 <div class="metric">
 <div class="metric-content">
 <span class="laurel-pair" aria-hidden="true"><img src="laurel-pair.png" alt=""></span>
-<strong>+69K</strong>
+<strong>69K</strong>
 <span>Lessons</span>
 </div>
 </div>

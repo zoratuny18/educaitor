@@ -296,7 +296,7 @@ h1{font-size:clamp(44px,4.5vw,69px);line-height:1.02;margin-bottom:20px;max-widt
   .hero h1{font-size:clamp(33px,8.7vw,44px);letter-spacing:-1.2px;max-width:100%;width:100%}
   .hero h1 br{display:none}
   .hero-subtitle{font-size:16px}
-  .app-store-link{width:164px}
+  .app-store-link{width:164px;display:block;margin-inline:auto}
   .hero-metrics{gap:0;margin-bottom:14px;max-width:100%;justify-content:flex-start}
   .hero-metrics .metric{flex:1 1 0;width:auto;min-height:66px;height:auto}
   .metric-content{padding:0 5px;gap:4px}
